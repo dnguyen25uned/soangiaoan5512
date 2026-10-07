@@ -192,7 +192,7 @@ function loadSettings() {
   try {
     return JSON.parse(fs.readFileSync(SETTINGS_PATH, 'utf8'));
   } catch {
-    return { baseUrl: 'https://api.groq.com/openai/v1', model: 'llama-3.3-70b-versatile', apiKey: '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' };
+    return { baseUrl: 'https://api.groq.com/openai/v1', model: 'llama-3.3-70b-versatile', apiKey: '' };
   }
 }
 
