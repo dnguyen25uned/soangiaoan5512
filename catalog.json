@@ -1,0 +1,2172 @@
+{
+ "meta": {
+  "series": "Kết nối tri thức với cuộc sống",
+  "publisher": "NXB Giáo dục Việt Nam",
+  "note": "Từ năm học 2026-2027 cả nước dùng thống nhất bộ sách này theo Quyết định 3588/QĐ-BGDĐT ngày 26/12/2025.",
+  "totalItems": 283,
+  "totalMainLessons": 151
+ },
+ "grades": [
+  {
+   "grade": 6,
+   "chapters": [
+    {
+     "code": "6-I",
+     "roman": "I",
+     "volume": 1,
+     "name": "Tập hợp các số tự nhiên",
+     "items": [
+      {
+       "id": "6-1",
+       "kind": "lesson",
+       "number": 1,
+       "title": "Tập hợp",
+       "label": "Bài 1. Tập hợp"
+      },
+      {
+       "id": "6-2",
+       "kind": "lesson",
+       "number": 2,
+       "title": "Cách ghi số tự nhiên",
+       "label": "Bài 2. Cách ghi số tự nhiên"
+      },
+      {
+       "id": "6-3",
+       "kind": "lesson",
+       "number": 3,
+       "title": "Thứ tự trong tập hợp các số tự nhiên",
+       "label": "Bài 3. Thứ tự trong tập hợp các số tự nhiên"
+      },
+      {
+       "id": "6-4",
+       "kind": "lesson",
+       "number": 4,
+       "title": "Phép cộng và phép trừ số tự nhiên",
+       "label": "Bài 4. Phép cộng và phép trừ số tự nhiên"
+      },
+      {
+       "id": "6-5",
+       "kind": "lesson",
+       "number": 5,
+       "title": "Phép nhân và phép chia số tự nhiên",
+       "label": "Bài 5. Phép nhân và phép chia số tự nhiên"
+      },
+      {
+       "id": "6-I-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 5"
+      },
+      {
+       "id": "6-6",
+       "kind": "lesson",
+       "number": 6,
+       "title": "Lũy thừa với số mũ tự nhiên",
+       "label": "Bài 6. Lũy thừa với số mũ tự nhiên"
+      },
+      {
+       "id": "6-7",
+       "kind": "lesson",
+       "number": 7,
+       "title": "Thứ tự thực hiện các phép tính",
+       "label": "Bài 7. Thứ tự thực hiện các phép tính"
+      },
+      {
+       "id": "6-I-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 7"
+      },
+      {
+       "id": "6-I-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương I"
+      }
+     ]
+    },
+    {
+     "code": "6-II",
+     "roman": "II",
+     "volume": 1,
+     "name": "Tính chia hết trong tập hợp các số tự nhiên",
+     "items": [
+      {
+       "id": "6-8",
+       "kind": "lesson",
+       "number": 8,
+       "title": "Quan hệ chia hết và tính chất",
+       "label": "Bài 8. Quan hệ chia hết và tính chất"
+      },
+      {
+       "id": "6-9",
+       "kind": "lesson",
+       "number": 9,
+       "title": "Dấu hiệu chia hết",
+       "label": "Bài 9. Dấu hiệu chia hết"
+      },
+      {
+       "id": "6-10",
+       "kind": "lesson",
+       "number": 10,
+       "title": "Số nguyên tố",
+       "label": "Bài 10. Số nguyên tố"
+      },
+      {
+       "id": "6-II-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 10"
+      },
+      {
+       "id": "6-11",
+       "kind": "lesson",
+       "number": 11,
+       "title": "Ước chung. Ước chung lớn nhất",
+       "label": "Bài 11. Ước chung. Ước chung lớn nhất"
+      },
+      {
+       "id": "6-12",
+       "kind": "lesson",
+       "number": 12,
+       "title": "Bội chung. Bội chung nhỏ nhất",
+       "label": "Bài 12. Bội chung. Bội chung nhỏ nhất"
+      },
+      {
+       "id": "6-II-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 12"
+      },
+      {
+       "id": "6-II-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương II"
+      }
+     ]
+    },
+    {
+     "code": "6-III",
+     "roman": "III",
+     "volume": 1,
+     "name": "Số nguyên",
+     "items": [
+      {
+       "id": "6-13",
+       "kind": "lesson",
+       "number": 13,
+       "title": "Tập hợp các số nguyên",
+       "label": "Bài 13. Tập hợp các số nguyên"
+      },
+      {
+       "id": "6-14",
+       "kind": "lesson",
+       "number": 14,
+       "title": "Phép cộng và phép trừ số nguyên",
+       "label": "Bài 14. Phép cộng và phép trừ số nguyên"
+      },
+      {
+       "id": "6-15",
+       "kind": "lesson",
+       "number": 15,
+       "title": "Quy tắc dấu ngoặc",
+       "label": "Bài 15. Quy tắc dấu ngoặc"
+      },
+      {
+       "id": "6-III-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 15"
+      },
+      {
+       "id": "6-16",
+       "kind": "lesson",
+       "number": 16,
+       "title": "Phép nhân số nguyên",
+       "label": "Bài 16. Phép nhân số nguyên"
+      },
+      {
+       "id": "6-17",
+       "kind": "lesson",
+       "number": 17,
+       "title": "Phép chia hết. Ước và bội của một số nguyên",
+       "label": "Bài 17. Phép chia hết. Ước và bội của một số nguyên"
+      },
+      {
+       "id": "6-III-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 17"
+      },
+      {
+       "id": "6-III-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương III"
+      }
+     ]
+    },
+    {
+     "code": "6-IV",
+     "roman": "IV",
+     "volume": 1,
+     "name": "Một số hình phẳng trong thực tiễn",
+     "items": [
+      {
+       "id": "6-18",
+       "kind": "lesson",
+       "number": 18,
+       "title": "Hình tam giác đều. Hình vuông. Hình lục giác đều",
+       "label": "Bài 18. Hình tam giác đều. Hình vuông. Hình lục giác đều"
+      },
+      {
+       "id": "6-19",
+       "kind": "lesson",
+       "number": 19,
+       "title": "Hình chữ nhật. Hình thoi. Hình bình hành. Hình thang cân",
+       "label": "Bài 19. Hình chữ nhật. Hình thoi. Hình bình hành. Hình thang cân"
+      },
+      {
+       "id": "6-20",
+       "kind": "lesson",
+       "number": 20,
+       "title": "Chu vi và diện tích của một số tứ giác đã học",
+       "label": "Bài 20. Chu vi và diện tích của một số tứ giác đã học"
+      },
+      {
+       "id": "6-IV-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 20"
+      },
+      {
+       "id": "6-IV-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IV"
+      }
+     ]
+    },
+    {
+     "code": "6-V",
+     "roman": "V",
+     "volume": 1,
+     "name": "Tính đối xứng của hình phẳng trong tự nhiên",
+     "items": [
+      {
+       "id": "6-21",
+       "kind": "lesson",
+       "number": 21,
+       "title": "Hình có trục đối xứng",
+       "label": "Bài 21. Hình có trục đối xứng"
+      },
+      {
+       "id": "6-22",
+       "kind": "lesson",
+       "number": 22,
+       "title": "Hình có tâm đối xứng",
+       "label": "Bài 22. Hình có tâm đối xứng"
+      },
+      {
+       "id": "6-V-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 22"
+      },
+      {
+       "id": "6-V-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương V"
+      }
+     ]
+    },
+    {
+     "code": "6-VI",
+     "roman": "VI",
+     "volume": 2,
+     "name": "Phân số",
+     "items": [
+      {
+       "id": "6-23",
+       "kind": "lesson",
+       "number": 23,
+       "title": "Mở rộng phân số. Phân số bằng nhau",
+       "label": "Bài 23. Mở rộng phân số. Phân số bằng nhau"
+      },
+      {
+       "id": "6-24",
+       "kind": "lesson",
+       "number": 24,
+       "title": "So sánh phân số. Hỗn số dương",
+       "label": "Bài 24. So sánh phân số. Hỗn số dương"
+      },
+      {
+       "id": "6-VI-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 24"
+      },
+      {
+       "id": "6-25",
+       "kind": "lesson",
+       "number": 25,
+       "title": "Phép cộng và phép trừ phân số",
+       "label": "Bài 25. Phép cộng và phép trừ phân số"
+      },
+      {
+       "id": "6-26",
+       "kind": "lesson",
+       "number": 26,
+       "title": "Phép nhân và phép chia phân số",
+       "label": "Bài 26. Phép nhân và phép chia phân số"
+      },
+      {
+       "id": "6-27",
+       "kind": "lesson",
+       "number": 27,
+       "title": "Hai bài toán về phân số",
+       "label": "Bài 27. Hai bài toán về phân số"
+      },
+      {
+       "id": "6-VI-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 27"
+      },
+      {
+       "id": "6-VI-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VI"
+      }
+     ]
+    },
+    {
+     "code": "6-VII",
+     "roman": "VII",
+     "volume": 2,
+     "name": "Số thập phân",
+     "items": [
+      {
+       "id": "6-28",
+       "kind": "lesson",
+       "number": 28,
+       "title": "Số thập phân",
+       "label": "Bài 28. Số thập phân"
+      },
+      {
+       "id": "6-29",
+       "kind": "lesson",
+       "number": 29,
+       "title": "Tính toán với số thập phân",
+       "label": "Bài 29. Tính toán với số thập phân"
+      },
+      {
+       "id": "6-30",
+       "kind": "lesson",
+       "number": 30,
+       "title": "Làm tròn và ước lượng",
+       "label": "Bài 30. Làm tròn và ước lượng"
+      },
+      {
+       "id": "6-31",
+       "kind": "lesson",
+       "number": 31,
+       "title": "Một số bài toán về tỉ số và tỉ số phần trăm",
+       "label": "Bài 31. Một số bài toán về tỉ số và tỉ số phần trăm"
+      },
+      {
+       "id": "6-VII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 31"
+      },
+      {
+       "id": "6-VII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VII"
+      }
+     ]
+    },
+    {
+     "code": "6-VIII",
+     "roman": "VIII",
+     "volume": 2,
+     "name": "Những hình hình học cơ bản",
+     "items": [
+      {
+       "id": "6-32",
+       "kind": "lesson",
+       "number": 32,
+       "title": "Điểm và đường thẳng",
+       "label": "Bài 32. Điểm và đường thẳng"
+      },
+      {
+       "id": "6-33",
+       "kind": "lesson",
+       "number": 33,
+       "title": "Điểm nằm giữa hai điểm. Tia",
+       "label": "Bài 33. Điểm nằm giữa hai điểm. Tia"
+      },
+      {
+       "id": "6-34",
+       "kind": "lesson",
+       "number": 34,
+       "title": "Đoạn thẳng. Độ dài đoạn thẳng",
+       "label": "Bài 34. Đoạn thẳng. Độ dài đoạn thẳng"
+      },
+      {
+       "id": "6-35",
+       "kind": "lesson",
+       "number": 35,
+       "title": "Trung điểm của đoạn thẳng",
+       "label": "Bài 35. Trung điểm của đoạn thẳng"
+      },
+      {
+       "id": "6-VIII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 35"
+      },
+      {
+       "id": "6-36",
+       "kind": "lesson",
+       "number": 36,
+       "title": "Góc",
+       "label": "Bài 36. Góc"
+      },
+      {
+       "id": "6-37",
+       "kind": "lesson",
+       "number": 37,
+       "title": "Số đo góc",
+       "label": "Bài 37. Số đo góc"
+      },
+      {
+       "id": "6-VIII-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 37"
+      },
+      {
+       "id": "6-VIII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VIII"
+      }
+     ]
+    },
+    {
+     "code": "6-IX",
+     "roman": "IX",
+     "volume": 2,
+     "name": "Dữ liệu và xác suất thực nghiệm",
+     "items": [
+      {
+       "id": "6-38",
+       "kind": "lesson",
+       "number": 38,
+       "title": "Dữ liệu và thu thập dữ liệu",
+       "label": "Bài 38. Dữ liệu và thu thập dữ liệu"
+      },
+      {
+       "id": "6-39",
+       "kind": "lesson",
+       "number": 39,
+       "title": "Bảng thống kê và biểu đồ tranh",
+       "label": "Bài 39. Bảng thống kê và biểu đồ tranh"
+      },
+      {
+       "id": "6-40",
+       "kind": "lesson",
+       "number": 40,
+       "title": "Biểu đồ cột",
+       "label": "Bài 40. Biểu đồ cột"
+      },
+      {
+       "id": "6-41",
+       "kind": "lesson",
+       "number": 41,
+       "title": "Biểu đồ cột kép",
+       "label": "Bài 41. Biểu đồ cột kép"
+      },
+      {
+       "id": "6-IX-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 41"
+      },
+      {
+       "id": "6-42",
+       "kind": "lesson",
+       "number": 42,
+       "title": "Kết quả có thể và sự kiện trong trò chơi, thí nghiệm",
+       "label": "Bài 42. Kết quả có thể và sự kiện trong trò chơi, thí nghiệm"
+      },
+      {
+       "id": "6-43",
+       "kind": "lesson",
+       "number": 43,
+       "title": "Xác suất thực nghiệm",
+       "label": "Bài 43. Xác suất thực nghiệm"
+      },
+      {
+       "id": "6-IX-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 43"
+      },
+      {
+       "id": "6-IX-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IX"
+      }
+     ]
+    }
+   ],
+   "hdtn": [
+    {
+     "volume": 1,
+     "items": [
+      {
+       "id": "6-hdtn-1-1",
+       "kind": "hdtn",
+       "title": "Tấm thiệp và phòng học của em"
+      },
+      {
+       "id": "6-hdtn-1-2",
+       "kind": "hdtn",
+       "title": "Vẽ hình đơn giản với phần mềm GeoGebra"
+      },
+      {
+       "id": "6-hdtn-1-3",
+       "kind": "hdtn",
+       "title": "Sử dụng máy tính cầm tay"
+      }
+     ]
+    },
+    {
+     "volume": 2,
+     "items": [
+      {
+       "id": "6-hdtn-2-1",
+       "kind": "hdtn",
+       "title": "Kế hoạch chi tiêu cá nhân và gia đình"
+      },
+      {
+       "id": "6-hdtn-2-2",
+       "kind": "hdtn",
+       "title": "Hoạt động thể thao nào được yêu thích nhất trong hè?"
+      },
+      {
+       "id": "6-hdtn-2-3",
+       "kind": "hdtn",
+       "title": "Vẽ hình đơn giản với phần mềm GeoGebra"
+      }
+     ]
+    }
+   ],
+   "yearReview": {
+    "id": "6-ontap-cuoi-nam",
+    "kind": "ontap",
+    "title": "Ôn tập cuối năm"
+   }
+  },
+  {
+   "grade": 7,
+   "chapters": [
+    {
+     "code": "7-I",
+     "roman": "I",
+     "volume": 1,
+     "name": "Số hữu tỉ",
+     "items": [
+      {
+       "id": "7-1",
+       "kind": "lesson",
+       "number": 1,
+       "title": "Tập hợp các số hữu tỉ",
+       "label": "Bài 1. Tập hợp các số hữu tỉ"
+      },
+      {
+       "id": "7-2",
+       "kind": "lesson",
+       "number": 2,
+       "title": "Cộng, trừ, nhân, chia số hữu tỉ",
+       "label": "Bài 2. Cộng, trừ, nhân, chia số hữu tỉ"
+      },
+      {
+       "id": "7-I-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 2"
+      },
+      {
+       "id": "7-3",
+       "kind": "lesson",
+       "number": 3,
+       "title": "Lũy thừa với số mũ tự nhiên của một số hữu tỉ",
+       "label": "Bài 3. Lũy thừa với số mũ tự nhiên của một số hữu tỉ"
+      },
+      {
+       "id": "7-4",
+       "kind": "lesson",
+       "number": 4,
+       "title": "Thứ tự thực hiện các phép tính. Quy tắc chuyển vế",
+       "label": "Bài 4. Thứ tự thực hiện các phép tính. Quy tắc chuyển vế"
+      },
+      {
+       "id": "7-I-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 4"
+      },
+      {
+       "id": "7-I-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương I"
+      }
+     ]
+    },
+    {
+     "code": "7-II",
+     "roman": "II",
+     "volume": 1,
+     "name": "Số thực",
+     "items": [
+      {
+       "id": "7-5",
+       "kind": "lesson",
+       "number": 5,
+       "title": "Làm quen với số thập phân vô hạn tuần hoàn",
+       "label": "Bài 5. Làm quen với số thập phân vô hạn tuần hoàn"
+      },
+      {
+       "id": "7-6",
+       "kind": "lesson",
+       "number": 6,
+       "title": "Số vô tỉ. Căn bậc hai số học",
+       "label": "Bài 6. Số vô tỉ. Căn bậc hai số học"
+      },
+      {
+       "id": "7-7",
+       "kind": "lesson",
+       "number": 7,
+       "title": "Tập hợp các số thực",
+       "label": "Bài 7. Tập hợp các số thực"
+      },
+      {
+       "id": "7-II-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 7"
+      },
+      {
+       "id": "7-II-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương II"
+      }
+     ]
+    },
+    {
+     "code": "7-III",
+     "roman": "III",
+     "volume": 1,
+     "name": "Góc và đường thẳng song song",
+     "items": [
+      {
+       "id": "7-8",
+       "kind": "lesson",
+       "number": 8,
+       "title": "Góc ở vị trí đặc biệt. Tia phân giác của một góc",
+       "label": "Bài 8. Góc ở vị trí đặc biệt. Tia phân giác của một góc"
+      },
+      {
+       "id": "7-9",
+       "kind": "lesson",
+       "number": 9,
+       "title": "Hai đường thẳng song song và dấu hiệu nhận biết",
+       "label": "Bài 9. Hai đường thẳng song song và dấu hiệu nhận biết"
+      },
+      {
+       "id": "7-III-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 9"
+      },
+      {
+       "id": "7-10",
+       "kind": "lesson",
+       "number": 10,
+       "title": "Tiên đề Euclid. Tính chất của hai đường thẳng song song",
+       "label": "Bài 10. Tiên đề Euclid. Tính chất của hai đường thẳng song song"
+      },
+      {
+       "id": "7-11",
+       "kind": "lesson",
+       "number": 11,
+       "title": "Định lí và chứng minh định lí",
+       "label": "Bài 11. Định lí và chứng minh định lí"
+      },
+      {
+       "id": "7-III-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 11"
+      },
+      {
+       "id": "7-III-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương III"
+      }
+     ]
+    },
+    {
+     "code": "7-IV",
+     "roman": "IV",
+     "volume": 1,
+     "name": "Tam giác bằng nhau",
+     "items": [
+      {
+       "id": "7-12",
+       "kind": "lesson",
+       "number": 12,
+       "title": "Tổng các góc trong một tam giác",
+       "label": "Bài 12. Tổng các góc trong một tam giác"
+      },
+      {
+       "id": "7-13",
+       "kind": "lesson",
+       "number": 13,
+       "title": "Hai tam giác bằng nhau. Trường hợp bằng nhau thứ nhất của tam giác",
+       "label": "Bài 13. Hai tam giác bằng nhau. Trường hợp bằng nhau thứ nhất của tam giác"
+      },
+      {
+       "id": "7-IV-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 13"
+      },
+      {
+       "id": "7-14",
+       "kind": "lesson",
+       "number": 14,
+       "title": "Trường hợp bằng nhau thứ hai và thứ ba của tam giác",
+       "label": "Bài 14. Trường hợp bằng nhau thứ hai và thứ ba của tam giác"
+      },
+      {
+       "id": "7-IV-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 14"
+      },
+      {
+       "id": "7-15",
+       "kind": "lesson",
+       "number": 15,
+       "title": "Các trường hợp bằng nhau của tam giác vuông",
+       "label": "Bài 15. Các trường hợp bằng nhau của tam giác vuông"
+      },
+      {
+       "id": "7-16",
+       "kind": "lesson",
+       "number": 16,
+       "title": "Tam giác cân. Đường trung trực của đoạn thẳng",
+       "label": "Bài 16. Tam giác cân. Đường trung trực của đoạn thẳng"
+      },
+      {
+       "id": "7-IV-ltc3",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 16"
+      },
+      {
+       "id": "7-IV-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IV"
+      }
+     ]
+    },
+    {
+     "code": "7-V",
+     "roman": "V",
+     "volume": 1,
+     "name": "Thu thập và biểu diễn dữ liệu",
+     "items": [
+      {
+       "id": "7-17",
+       "kind": "lesson",
+       "number": 17,
+       "title": "Thu thập và phân loại dữ liệu",
+       "label": "Bài 17. Thu thập và phân loại dữ liệu"
+      },
+      {
+       "id": "7-18",
+       "kind": "lesson",
+       "number": 18,
+       "title": "Biểu đồ hình quạt tròn",
+       "label": "Bài 18. Biểu đồ hình quạt tròn"
+      },
+      {
+       "id": "7-19",
+       "kind": "lesson",
+       "number": 19,
+       "title": "Biểu đồ đoạn thẳng",
+       "label": "Bài 19. Biểu đồ đoạn thẳng"
+      },
+      {
+       "id": "7-V-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 19"
+      },
+      {
+       "id": "7-V-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương V"
+      }
+     ]
+    },
+    {
+     "code": "7-VI",
+     "roman": "VI",
+     "volume": 2,
+     "name": "Tỉ lệ thức và đại lượng tỉ lệ",
+     "items": [
+      {
+       "id": "7-20",
+       "kind": "lesson",
+       "number": 20,
+       "title": "Tỉ lệ thức",
+       "label": "Bài 20. Tỉ lệ thức"
+      },
+      {
+       "id": "7-21",
+       "kind": "lesson",
+       "number": 21,
+       "title": "Tính chất của dãy tỉ số bằng nhau",
+       "label": "Bài 21. Tính chất của dãy tỉ số bằng nhau"
+      },
+      {
+       "id": "7-VI-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 21"
+      },
+      {
+       "id": "7-22",
+       "kind": "lesson",
+       "number": 22,
+       "title": "Đại lượng tỉ lệ thuận",
+       "label": "Bài 22. Đại lượng tỉ lệ thuận"
+      },
+      {
+       "id": "7-23",
+       "kind": "lesson",
+       "number": 23,
+       "title": "Đại lượng tỉ lệ nghịch",
+       "label": "Bài 23. Đại lượng tỉ lệ nghịch"
+      },
+      {
+       "id": "7-VI-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 23"
+      },
+      {
+       "id": "7-VI-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VI"
+      }
+     ]
+    },
+    {
+     "code": "7-VII",
+     "roman": "VII",
+     "volume": 2,
+     "name": "Biểu thức đại số và đa thức một biến",
+     "items": [
+      {
+       "id": "7-24",
+       "kind": "lesson",
+       "number": 24,
+       "title": "Biểu thức đại số",
+       "label": "Bài 24. Biểu thức đại số"
+      },
+      {
+       "id": "7-25",
+       "kind": "lesson",
+       "number": 25,
+       "title": "Đa thức một biến",
+       "label": "Bài 25. Đa thức một biến"
+      },
+      {
+       "id": "7-26",
+       "kind": "lesson",
+       "number": 26,
+       "title": "Phép cộng và phép trừ đa thức một biến",
+       "label": "Bài 26. Phép cộng và phép trừ đa thức một biến"
+      },
+      {
+       "id": "7-VII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 26"
+      },
+      {
+       "id": "7-27",
+       "kind": "lesson",
+       "number": 27,
+       "title": "Phép nhân đa thức một biến",
+       "label": "Bài 27. Phép nhân đa thức một biến"
+      },
+      {
+       "id": "7-28",
+       "kind": "lesson",
+       "number": 28,
+       "title": "Phép chia đa thức một biến",
+       "label": "Bài 28. Phép chia đa thức một biến"
+      },
+      {
+       "id": "7-VII-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 28"
+      },
+      {
+       "id": "7-VII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VII"
+      }
+     ]
+    },
+    {
+     "code": "7-VIII",
+     "roman": "VIII",
+     "volume": 2,
+     "name": "Làm quen với biến cố và xác suất của biến cố",
+     "items": [
+      {
+       "id": "7-29",
+       "kind": "lesson",
+       "number": 29,
+       "title": "Làm quen với biến cố",
+       "label": "Bài 29. Làm quen với biến cố"
+      },
+      {
+       "id": "7-30",
+       "kind": "lesson",
+       "number": 30,
+       "title": "Làm quen với xác suất của biến cố",
+       "label": "Bài 30. Làm quen với xác suất của biến cố"
+      },
+      {
+       "id": "7-VIII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 30"
+      },
+      {
+       "id": "7-VIII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VIII"
+      }
+     ]
+    },
+    {
+     "code": "7-IX",
+     "roman": "IX",
+     "volume": 2,
+     "name": "Quan hệ giữa các yếu tố trong một tam giác",
+     "items": [
+      {
+       "id": "7-31",
+       "kind": "lesson",
+       "number": 31,
+       "title": "Quan hệ giữa góc và cạnh đối diện trong một tam giác",
+       "label": "Bài 31. Quan hệ giữa góc và cạnh đối diện trong một tam giác"
+      },
+      {
+       "id": "7-32",
+       "kind": "lesson",
+       "number": 32,
+       "title": "Quan hệ giữa đường vuông góc và đường xiên",
+       "label": "Bài 32. Quan hệ giữa đường vuông góc và đường xiên"
+      },
+      {
+       "id": "7-33",
+       "kind": "lesson",
+       "number": 33,
+       "title": "Quan hệ giữa ba cạnh của một tam giác",
+       "label": "Bài 33. Quan hệ giữa ba cạnh của một tam giác"
+      },
+      {
+       "id": "7-IX-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 33"
+      },
+      {
+       "id": "7-34",
+       "kind": "lesson",
+       "number": 34,
+       "title": "Sự đồng quy của ba đường trung tuyến, ba đường phân giác trong một tam giác",
+       "label": "Bài 34. Sự đồng quy của ba đường trung tuyến, ba đường phân giác trong một tam giác"
+      },
+      {
+       "id": "7-35",
+       "kind": "lesson",
+       "number": 35,
+       "title": "Sự đồng quy của ba đường trung trực, ba đường cao trong một tam giác",
+       "label": "Bài 35. Sự đồng quy của ba đường trung trực, ba đường cao trong một tam giác"
+      },
+      {
+       "id": "7-IX-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 35"
+      },
+      {
+       "id": "7-IX-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IX"
+      }
+     ]
+    },
+    {
+     "code": "7-X",
+     "roman": "X",
+     "volume": 2,
+     "name": "Một số hình khối trong thực tiễn",
+     "items": [
+      {
+       "id": "7-36",
+       "kind": "lesson",
+       "number": 36,
+       "title": "Hình hộp chữ nhật và hình lập phương",
+       "label": "Bài 36. Hình hộp chữ nhật và hình lập phương"
+      },
+      {
+       "id": "7-X-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập",
+       "after": "Bài 36"
+      },
+      {
+       "id": "7-37",
+       "kind": "lesson",
+       "number": 37,
+       "title": "Hình lăng trụ đứng tam giác và hình lăng trụ đứng tứ giác",
+       "label": "Bài 37. Hình lăng trụ đứng tam giác và hình lăng trụ đứng tứ giác"
+      },
+      {
+       "id": "7-X-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập",
+       "after": "Bài 37"
+      },
+      {
+       "id": "7-X-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương X"
+      }
+     ]
+    }
+   ],
+   "hdtn": [
+    {
+     "volume": 1,
+     "items": [
+      {
+       "id": "7-hdtn-1-1",
+       "kind": "hdtn",
+       "title": "Vẽ hình đơn giản với phần mềm GeoGebra"
+      },
+      {
+       "id": "7-hdtn-1-2",
+       "kind": "hdtn",
+       "title": "Dân số và cơ cấu dân số Việt Nam"
+      }
+     ]
+    },
+    {
+     "volume": 2,
+     "items": [
+      {
+       "id": "7-hdtn-2-1",
+       "kind": "hdtn",
+       "title": "Đại lượng tỉ lệ trong đời sống"
+      },
+      {
+       "id": "7-hdtn-2-2",
+       "kind": "hdtn",
+       "title": "Vòng quay may mắn"
+      },
+      {
+       "id": "7-hdtn-2-3",
+       "kind": "hdtn",
+       "title": "Hộp quà và chân đế lịch để bàn của em"
+      }
+     ]
+    }
+   ],
+   "yearReview": {
+    "id": "7-ontap-cuoi-nam",
+    "kind": "ontap",
+    "title": "Ôn tập cuối năm"
+   }
+  },
+  {
+   "grade": 8,
+   "chapters": [
+    {
+     "code": "8-I",
+     "roman": "I",
+     "volume": 1,
+     "name": "Đa thức",
+     "items": [
+      {
+       "id": "8-1",
+       "kind": "lesson",
+       "number": 1,
+       "title": "Đơn thức",
+       "label": "Bài 1. Đơn thức"
+      },
+      {
+       "id": "8-2",
+       "kind": "lesson",
+       "number": 2,
+       "title": "Đa thức",
+       "label": "Bài 2. Đa thức"
+      },
+      {
+       "id": "8-3",
+       "kind": "lesson",
+       "number": 3,
+       "title": "Phép cộng và phép trừ đa thức",
+       "label": "Bài 3. Phép cộng và phép trừ đa thức"
+      },
+      {
+       "id": "8-I-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 3"
+      },
+      {
+       "id": "8-4",
+       "kind": "lesson",
+       "number": 4,
+       "title": "Phép nhân đa thức",
+       "label": "Bài 4. Phép nhân đa thức"
+      },
+      {
+       "id": "8-5",
+       "kind": "lesson",
+       "number": 5,
+       "title": "Phép chia đa thức cho đơn thức",
+       "label": "Bài 5. Phép chia đa thức cho đơn thức"
+      },
+      {
+       "id": "8-I-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 5"
+      },
+      {
+       "id": "8-I-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương I"
+      }
+     ]
+    },
+    {
+     "code": "8-II",
+     "roman": "II",
+     "volume": 1,
+     "name": "Hằng đẳng thức đáng nhớ và ứng dụng",
+     "items": [
+      {
+       "id": "8-6",
+       "kind": "lesson",
+       "number": 6,
+       "title": "Hiệu hai bình phương. Bình phương của một tổng hay một hiệu",
+       "label": "Bài 6. Hiệu hai bình phương. Bình phương của một tổng hay một hiệu"
+      },
+      {
+       "id": "8-7",
+       "kind": "lesson",
+       "number": 7,
+       "title": "Lập phương của một tổng hay một hiệu",
+       "label": "Bài 7. Lập phương của một tổng hay một hiệu"
+      },
+      {
+       "id": "8-8",
+       "kind": "lesson",
+       "number": 8,
+       "title": "Tổng và hiệu hai lập phương",
+       "label": "Bài 8. Tổng và hiệu hai lập phương"
+      },
+      {
+       "id": "8-II-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 8"
+      },
+      {
+       "id": "8-9",
+       "kind": "lesson",
+       "number": 9,
+       "title": "Phân tích đa thức thành nhân tử",
+       "label": "Bài 9. Phân tích đa thức thành nhân tử"
+      },
+      {
+       "id": "8-II-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 9"
+      },
+      {
+       "id": "8-II-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương II"
+      }
+     ]
+    },
+    {
+     "code": "8-III",
+     "roman": "III",
+     "volume": 1,
+     "name": "Tứ giác",
+     "items": [
+      {
+       "id": "8-10",
+       "kind": "lesson",
+       "number": 10,
+       "title": "Tứ giác",
+       "label": "Bài 10. Tứ giác"
+      },
+      {
+       "id": "8-11",
+       "kind": "lesson",
+       "number": 11,
+       "title": "Hình thang cân",
+       "label": "Bài 11. Hình thang cân"
+      },
+      {
+       "id": "8-III-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 11"
+      },
+      {
+       "id": "8-12",
+       "kind": "lesson",
+       "number": 12,
+       "title": "Hình bình hành",
+       "label": "Bài 12. Hình bình hành"
+      },
+      {
+       "id": "8-III-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 12"
+      },
+      {
+       "id": "8-13",
+       "kind": "lesson",
+       "number": 13,
+       "title": "Hình chữ nhật",
+       "label": "Bài 13. Hình chữ nhật"
+      },
+      {
+       "id": "8-14",
+       "kind": "lesson",
+       "number": 14,
+       "title": "Hình thoi và hình vuông",
+       "label": "Bài 14. Hình thoi và hình vuông"
+      },
+      {
+       "id": "8-III-ltc3",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 14"
+      },
+      {
+       "id": "8-III-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương III"
+      }
+     ]
+    },
+    {
+     "code": "8-IV",
+     "roman": "IV",
+     "volume": 1,
+     "name": "Định lí Thalès",
+     "items": [
+      {
+       "id": "8-15",
+       "kind": "lesson",
+       "number": 15,
+       "title": "Định lí Thalès trong tam giác",
+       "label": "Bài 15. Định lí Thalès trong tam giác"
+      },
+      {
+       "id": "8-16",
+       "kind": "lesson",
+       "number": 16,
+       "title": "Đường trung bình của tam giác",
+       "label": "Bài 16. Đường trung bình của tam giác"
+      },
+      {
+       "id": "8-17",
+       "kind": "lesson",
+       "number": 17,
+       "title": "Tính chất đường phân giác của tam giác",
+       "label": "Bài 17. Tính chất đường phân giác của tam giác"
+      },
+      {
+       "id": "8-IV-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 17"
+      },
+      {
+       "id": "8-IV-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IV"
+      }
+     ]
+    },
+    {
+     "code": "8-V",
+     "roman": "V",
+     "volume": 1,
+     "name": "Dữ liệu và biểu đồ",
+     "items": [
+      {
+       "id": "8-18",
+       "kind": "lesson",
+       "number": 18,
+       "title": "Thu thập và phân loại dữ liệu",
+       "label": "Bài 18. Thu thập và phân loại dữ liệu"
+      },
+      {
+       "id": "8-19",
+       "kind": "lesson",
+       "number": 19,
+       "title": "Biểu diễn dữ liệu bằng bảng, biểu đồ",
+       "label": "Bài 19. Biểu diễn dữ liệu bằng bảng, biểu đồ"
+      },
+      {
+       "id": "8-20",
+       "kind": "lesson",
+       "number": 20,
+       "title": "Phân tích số liệu thống kê dựa vào biểu đồ",
+       "label": "Bài 20. Phân tích số liệu thống kê dựa vào biểu đồ"
+      },
+      {
+       "id": "8-V-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 20"
+      },
+      {
+       "id": "8-V-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương V"
+      }
+     ]
+    },
+    {
+     "code": "8-VI",
+     "roman": "VI",
+     "volume": 2,
+     "name": "Phân thức đại số",
+     "items": [
+      {
+       "id": "8-21",
+       "kind": "lesson",
+       "number": 21,
+       "title": "Phân thức đại số",
+       "label": "Bài 21. Phân thức đại số"
+      },
+      {
+       "id": "8-22",
+       "kind": "lesson",
+       "number": 22,
+       "title": "Tính chất cơ bản của phân thức đại số",
+       "label": "Bài 22. Tính chất cơ bản của phân thức đại số"
+      },
+      {
+       "id": "8-VI-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 22"
+      },
+      {
+       "id": "8-23",
+       "kind": "lesson",
+       "number": 23,
+       "title": "Phép cộng và phép trừ phân thức đại số",
+       "label": "Bài 23. Phép cộng và phép trừ phân thức đại số"
+      },
+      {
+       "id": "8-24",
+       "kind": "lesson",
+       "number": 24,
+       "title": "Phép nhân và phép chia phân thức đại số",
+       "label": "Bài 24. Phép nhân và phép chia phân thức đại số"
+      },
+      {
+       "id": "8-VI-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 24"
+      },
+      {
+       "id": "8-VI-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VI"
+      }
+     ]
+    },
+    {
+     "code": "8-VII",
+     "roman": "VII",
+     "volume": 2,
+     "name": "Phương trình bậc nhất và hàm số bậc nhất",
+     "items": [
+      {
+       "id": "8-25",
+       "kind": "lesson",
+       "number": 25,
+       "title": "Phương trình bậc nhất một ẩn",
+       "label": "Bài 25. Phương trình bậc nhất một ẩn"
+      },
+      {
+       "id": "8-26",
+       "kind": "lesson",
+       "number": 26,
+       "title": "Giải bài toán bằng cách lập phương trình",
+       "label": "Bài 26. Giải bài toán bằng cách lập phương trình"
+      },
+      {
+       "id": "8-VII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 26"
+      },
+      {
+       "id": "8-27",
+       "kind": "lesson",
+       "number": 27,
+       "title": "Khái niệm hàm số và đồ thị của hàm số",
+       "label": "Bài 27. Khái niệm hàm số và đồ thị của hàm số"
+      },
+      {
+       "id": "8-28",
+       "kind": "lesson",
+       "number": 28,
+       "title": "Hàm số bậc nhất và đồ thị của hàm số bậc nhất",
+       "label": "Bài 28. Hàm số bậc nhất và đồ thị của hàm số bậc nhất"
+      },
+      {
+       "id": "8-29",
+       "kind": "lesson",
+       "number": 29,
+       "title": "Hệ số góc của đường thẳng",
+       "label": "Bài 29. Hệ số góc của đường thẳng"
+      },
+      {
+       "id": "8-VII-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 29"
+      },
+      {
+       "id": "8-VII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VII"
+      }
+     ]
+    },
+    {
+     "code": "8-VIII",
+     "roman": "VIII",
+     "volume": 2,
+     "name": "Mở đầu về tính xác suất của biến cố",
+     "items": [
+      {
+       "id": "8-30",
+       "kind": "lesson",
+       "number": 30,
+       "title": "Kết quả có thể và kết quả thuận lợi",
+       "label": "Bài 30. Kết quả có thể và kết quả thuận lợi"
+      },
+      {
+       "id": "8-31",
+       "kind": "lesson",
+       "number": 31,
+       "title": "Cách tính xác suất của biến cố bằng tỉ số",
+       "label": "Bài 31. Cách tính xác suất của biến cố bằng tỉ số"
+      },
+      {
+       "id": "8-32",
+       "kind": "lesson",
+       "number": 32,
+       "title": "Mối liên hệ giữa xác suất thực nghiệm với xác suất và ứng dụng",
+       "label": "Bài 32. Mối liên hệ giữa xác suất thực nghiệm với xác suất và ứng dụng"
+      },
+      {
+       "id": "8-VIII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 32"
+      },
+      {
+       "id": "8-VIII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VIII"
+      }
+     ]
+    },
+    {
+     "code": "8-IX",
+     "roman": "IX",
+     "volume": 2,
+     "name": "Tam giác đồng dạng",
+     "items": [
+      {
+       "id": "8-33",
+       "kind": "lesson",
+       "number": 33,
+       "title": "Hai tam giác đồng dạng",
+       "label": "Bài 33. Hai tam giác đồng dạng"
+      },
+      {
+       "id": "8-34",
+       "kind": "lesson",
+       "number": 34,
+       "title": "Ba trường hợp đồng dạng của hai tam giác",
+       "label": "Bài 34. Ba trường hợp đồng dạng của hai tam giác"
+      },
+      {
+       "id": "8-IX-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 34"
+      },
+      {
+       "id": "8-35",
+       "kind": "lesson",
+       "number": 35,
+       "title": "Định lí Pythagore và ứng dụng",
+       "label": "Bài 35. Định lí Pythagore và ứng dụng"
+      },
+      {
+       "id": "8-36",
+       "kind": "lesson",
+       "number": 36,
+       "title": "Các trường hợp đồng dạng của hai tam giác vuông",
+       "label": "Bài 36. Các trường hợp đồng dạng của hai tam giác vuông"
+      },
+      {
+       "id": "8-37",
+       "kind": "lesson",
+       "number": 37,
+       "title": "Hình đồng dạng",
+       "label": "Bài 37. Hình đồng dạng"
+      },
+      {
+       "id": "8-IX-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 37"
+      },
+      {
+       "id": "8-IX-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IX"
+      }
+     ]
+    },
+    {
+     "code": "8-X",
+     "roman": "X",
+     "volume": 2,
+     "name": "Một số hình khối trong thực tiễn",
+     "items": [
+      {
+       "id": "8-38",
+       "kind": "lesson",
+       "number": 38,
+       "title": "Hình chóp tam giác đều",
+       "label": "Bài 38. Hình chóp tam giác đều"
+      },
+      {
+       "id": "8-39",
+       "kind": "lesson",
+       "number": 39,
+       "title": "Hình chóp tứ giác đều",
+       "label": "Bài 39. Hình chóp tứ giác đều"
+      },
+      {
+       "id": "8-X-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 39"
+      },
+      {
+       "id": "8-X-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương X"
+      }
+     ]
+    }
+   ],
+   "hdtn": [
+    {
+     "volume": 1,
+     "items": [
+      {
+       "id": "8-hdtn-1-1",
+       "kind": "hdtn",
+       "title": "Công thức lãi kép"
+      },
+      {
+       "id": "8-hdtn-1-2",
+       "kind": "hdtn",
+       "title": "Thực hiện tính toán trên đa thức với phần mềm GeoGebra"
+      },
+      {
+       "id": "8-hdtn-1-3",
+       "kind": "hdtn",
+       "title": "Vẽ hình đơn giản với phần mềm GeoGebra"
+      },
+      {
+       "id": "8-hdtn-1-4",
+       "kind": "hdtn",
+       "title": "Phân tích đặc điểm khí hậu Việt Nam"
+      }
+     ]
+    },
+    {
+     "volume": 2,
+     "items": [
+      {
+       "id": "8-hdtn-2-1",
+       "kind": "hdtn",
+       "title": "Một vài ứng dụng của hàm số bậc nhất trong tài chính"
+      },
+      {
+       "id": "8-hdtn-2-2",
+       "kind": "hdtn",
+       "title": "Ứng dụng định lí Thalès, định lí Pythagore và tam giác đồng dạng để đo chiều cao, khoảng cách"
+      },
+      {
+       "id": "8-hdtn-2-3",
+       "kind": "hdtn",
+       "title": "Thực hành tính toán trên phân thức đại số và vẽ đồ thị hàm số với phần mềm GeoGebra"
+      },
+      {
+       "id": "8-hdtn-2-4",
+       "kind": "hdtn",
+       "title": "Mô tả thí nghiệm ngẫu nhiên với phần mềm Excel"
+      }
+     ]
+    }
+   ],
+   "yearReview": {
+    "id": "8-ontap-cuoi-nam",
+    "kind": "ontap",
+    "title": "Ôn tập cuối năm"
+   }
+  },
+  {
+   "grade": 9,
+   "chapters": [
+    {
+     "code": "9-I",
+     "roman": "I",
+     "volume": 1,
+     "name": "Phương trình và hệ hai phương trình bậc nhất hai ẩn",
+     "items": [
+      {
+       "id": "9-1",
+       "kind": "lesson",
+       "number": 1,
+       "title": "Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn",
+       "label": "Bài 1. Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn"
+      },
+      {
+       "id": "9-2",
+       "kind": "lesson",
+       "number": 2,
+       "title": "Giải hệ hai phương trình bậc nhất hai ẩn",
+       "label": "Bài 2. Giải hệ hai phương trình bậc nhất hai ẩn"
+      },
+      {
+       "id": "9-I-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 2"
+      },
+      {
+       "id": "9-3",
+       "kind": "lesson",
+       "number": 3,
+       "title": "Giải bài toán bằng cách lập hệ phương trình",
+       "label": "Bài 3. Giải bài toán bằng cách lập hệ phương trình"
+      },
+      {
+       "id": "9-I-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương I"
+      }
+     ]
+    },
+    {
+     "code": "9-II",
+     "roman": "II",
+     "volume": 1,
+     "name": "Phương trình, bất phương trình bậc nhất một ẩn",
+     "items": [
+      {
+       "id": "9-4",
+       "kind": "lesson",
+       "number": 4,
+       "title": "Phương trình quy về phương trình bậc nhất một ẩn",
+       "label": "Bài 4. Phương trình quy về phương trình bậc nhất một ẩn"
+      },
+      {
+       "id": "9-5",
+       "kind": "lesson",
+       "number": 5,
+       "title": "Bất đẳng thức và tính chất",
+       "label": "Bài 5. Bất đẳng thức và tính chất"
+      },
+      {
+       "id": "9-II-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 5"
+      },
+      {
+       "id": "9-6",
+       "kind": "lesson",
+       "number": 6,
+       "title": "Bất phương trình bậc nhất một ẩn",
+       "label": "Bài 6. Bất phương trình bậc nhất một ẩn"
+      },
+      {
+       "id": "9-II-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương II"
+      }
+     ]
+    },
+    {
+     "code": "9-III",
+     "roman": "III",
+     "volume": 1,
+     "name": "Căn bậc hai và căn bậc ba",
+     "items": [
+      {
+       "id": "9-7",
+       "kind": "lesson",
+       "number": 7,
+       "title": "Căn bậc hai và căn thức bậc hai",
+       "label": "Bài 7. Căn bậc hai và căn thức bậc hai"
+      },
+      {
+       "id": "9-8",
+       "kind": "lesson",
+       "number": 8,
+       "title": "Khai căn bậc hai với phép nhân và phép chia",
+       "label": "Bài 8. Khai căn bậc hai với phép nhân và phép chia"
+      },
+      {
+       "id": "9-III-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 8"
+      },
+      {
+       "id": "9-9",
+       "kind": "lesson",
+       "number": 9,
+       "title": "Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai",
+       "label": "Bài 9. Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai"
+      },
+      {
+       "id": "9-10",
+       "kind": "lesson",
+       "number": 10,
+       "title": "Căn bậc ba và căn thức bậc ba",
+       "label": "Bài 10. Căn bậc ba và căn thức bậc ba"
+      },
+      {
+       "id": "9-III-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 10"
+      },
+      {
+       "id": "9-III-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương III"
+      }
+     ]
+    },
+    {
+     "code": "9-IV",
+     "roman": "IV",
+     "volume": 1,
+     "name": "Hệ thức lượng trong tam giác vuông",
+     "items": [
+      {
+       "id": "9-11",
+       "kind": "lesson",
+       "number": 11,
+       "title": "Tỉ số lượng giác của góc nhọn",
+       "label": "Bài 11. Tỉ số lượng giác của góc nhọn"
+      },
+      {
+       "id": "9-12",
+       "kind": "lesson",
+       "number": 12,
+       "title": "Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng",
+       "label": "Bài 12. Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng"
+      },
+      {
+       "id": "9-IV-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 12"
+      },
+      {
+       "id": "9-IV-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IV"
+      }
+     ]
+    },
+    {
+     "code": "9-V",
+     "roman": "V",
+     "volume": 1,
+     "name": "Đường tròn",
+     "items": [
+      {
+       "id": "9-13",
+       "kind": "lesson",
+       "number": 13,
+       "title": "Mở đầu về đường tròn",
+       "label": "Bài 13. Mở đầu về đường tròn"
+      },
+      {
+       "id": "9-14",
+       "kind": "lesson",
+       "number": 14,
+       "title": "Cung và dây của một đường tròn",
+       "label": "Bài 14. Cung và dây của một đường tròn"
+      },
+      {
+       "id": "9-15",
+       "kind": "lesson",
+       "number": 15,
+       "title": "Độ dài của cung tròn. Diện tích hình quạt tròn và hình vành khuyên",
+       "label": "Bài 15. Độ dài của cung tròn. Diện tích hình quạt tròn và hình vành khuyên"
+      },
+      {
+       "id": "9-V-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 15"
+      },
+      {
+       "id": "9-16",
+       "kind": "lesson",
+       "number": 16,
+       "title": "Vị trí tương đối của đường thẳng và đường tròn",
+       "label": "Bài 16. Vị trí tương đối của đường thẳng và đường tròn"
+      },
+      {
+       "id": "9-17",
+       "kind": "lesson",
+       "number": 17,
+       "title": "Vị trí tương đối của hai đường tròn",
+       "label": "Bài 17. Vị trí tương đối của hai đường tròn"
+      },
+      {
+       "id": "9-V-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 17"
+      },
+      {
+       "id": "9-V-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương V"
+      }
+     ]
+    },
+    {
+     "code": "9-VI",
+     "roman": "VI",
+     "volume": 2,
+     "name": "Hàm số y = ax² (a ≠ 0). Phương trình bậc hai một ẩn",
+     "items": [
+      {
+       "id": "9-18",
+       "kind": "lesson",
+       "number": 18,
+       "title": "Hàm số y = ax² (a ≠ 0)",
+       "label": "Bài 18. Hàm số y = ax² (a ≠ 0)"
+      },
+      {
+       "id": "9-19",
+       "kind": "lesson",
+       "number": 19,
+       "title": "Phương trình bậc hai một ẩn",
+       "label": "Bài 19. Phương trình bậc hai một ẩn"
+      },
+      {
+       "id": "9-VI-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 19"
+      },
+      {
+       "id": "9-20",
+       "kind": "lesson",
+       "number": 20,
+       "title": "Định lí Viète và ứng dụng",
+       "label": "Bài 20. Định lí Viète và ứng dụng"
+      },
+      {
+       "id": "9-21",
+       "kind": "lesson",
+       "number": 21,
+       "title": "Giải bài toán bằng cách lập phương trình",
+       "label": "Bài 21. Giải bài toán bằng cách lập phương trình"
+      },
+      {
+       "id": "9-VI-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 21"
+      },
+      {
+       "id": "9-VI-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VI"
+      }
+     ]
+    },
+    {
+     "code": "9-VII",
+     "roman": "VII",
+     "volume": 2,
+     "name": "Tần số và tần số tương đối",
+     "items": [
+      {
+       "id": "9-22",
+       "kind": "lesson",
+       "number": 22,
+       "title": "Bảng tần số và biểu đồ tần số",
+       "label": "Bài 22. Bảng tần số và biểu đồ tần số"
+      },
+      {
+       "id": "9-23",
+       "kind": "lesson",
+       "number": 23,
+       "title": "Bảng tần số tương đối và biểu đồ tần số tương đối",
+       "label": "Bài 23. Bảng tần số tương đối và biểu đồ tần số tương đối"
+      },
+      {
+       "id": "9-VII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 23"
+      },
+      {
+       "id": "9-24",
+       "kind": "lesson",
+       "number": 24,
+       "title": "Bảng tần số, tần số tương đối ghép nhóm và biểu đồ",
+       "label": "Bài 24. Bảng tần số, tần số tương đối ghép nhóm và biểu đồ"
+      },
+      {
+       "id": "9-VII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VII"
+      }
+     ]
+    },
+    {
+     "code": "9-VIII",
+     "roman": "VIII",
+     "volume": 2,
+     "name": "Xác suất của biến cố trong một số mô hình đơn giản",
+     "items": [
+      {
+       "id": "9-25",
+       "kind": "lesson",
+       "number": 25,
+       "title": "Phép thử ngẫu nhiên và không gian mẫu",
+       "label": "Bài 25. Phép thử ngẫu nhiên và không gian mẫu"
+      },
+      {
+       "id": "9-26",
+       "kind": "lesson",
+       "number": 26,
+       "title": "Xác suất của biến cố liên quan tới phép thử",
+       "label": "Bài 26. Xác suất của biến cố liên quan tới phép thử"
+      },
+      {
+       "id": "9-VIII-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 26"
+      },
+      {
+       "id": "9-VIII-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương VIII"
+      }
+     ]
+    },
+    {
+     "code": "9-IX",
+     "roman": "IX",
+     "volume": 2,
+     "name": "Đường tròn ngoại tiếp và đường tròn nội tiếp",
+     "items": [
+      {
+       "id": "9-27",
+       "kind": "lesson",
+       "number": 27,
+       "title": "Góc nội tiếp",
+       "label": "Bài 27. Góc nội tiếp"
+      },
+      {
+       "id": "9-28",
+       "kind": "lesson",
+       "number": 28,
+       "title": "Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác",
+       "label": "Bài 28. Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác"
+      },
+      {
+       "id": "9-IX-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 28"
+      },
+      {
+       "id": "9-29",
+       "kind": "lesson",
+       "number": 29,
+       "title": "Tứ giác nội tiếp",
+       "label": "Bài 29. Tứ giác nội tiếp"
+      },
+      {
+       "id": "9-30",
+       "kind": "lesson",
+       "number": 30,
+       "title": "Đa giác đều",
+       "label": "Bài 30. Đa giác đều"
+      },
+      {
+       "id": "9-IX-ltc2",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 30"
+      },
+      {
+       "id": "9-IX-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương IX"
+      }
+     ]
+    },
+    {
+     "code": "9-X",
+     "roman": "X",
+     "volume": 2,
+     "name": "Một số hình khối trong thực tiễn",
+     "items": [
+      {
+       "id": "9-31",
+       "kind": "lesson",
+       "number": 31,
+       "title": "Hình trụ và hình nón",
+       "label": "Bài 31. Hình trụ và hình nón"
+      },
+      {
+       "id": "9-32",
+       "kind": "lesson",
+       "number": 32,
+       "title": "Hình cầu",
+       "label": "Bài 32. Hình cầu"
+      },
+      {
+       "id": "9-X-ltc1",
+       "kind": "ltc",
+       "title": "Luyện tập chung",
+       "after": "Bài 32"
+      },
+      {
+       "id": "9-X-btc",
+       "kind": "btc",
+       "title": "Bài tập cuối chương X"
+      }
+     ]
+    }
+   ],
+   "hdtn": [
+    {
+     "volume": 1,
+     "items": [
+      {
+       "id": "9-hdtn-1-1",
+       "kind": "hdtn",
+       "title": "Pha chế dung dịch theo nồng độ yêu cầu"
+      },
+      {
+       "id": "9-hdtn-1-2",
+       "kind": "hdtn",
+       "title": "Tính chiều cao và xác định khoảng cách"
+      }
+     ]
+    },
+    {
+     "volume": 2,
+     "items": [
+      {
+       "id": "9-hdtn-2-1",
+       "kind": "hdtn",
+       "title": "Giải phương trình, hệ phương trình và vẽ đồ thị hàm số với phần mềm GeoGebra"
+      },
+      {
+       "id": "9-hdtn-2-2",
+       "kind": "hdtn",
+       "title": "Vẽ hình đơn giản với phần mềm GeoGebra"
+      },
+      {
+       "id": "9-hdtn-2-3",
+       "kind": "hdtn",
+       "title": "Xác định tần số, tần số tương đối, vẽ các biểu đồ biểu diễn bảng tần số, tần số tương đối bằng Excel"
+      },
+      {
+       "id": "9-hdtn-2-4",
+       "kind": "hdtn",
+       "title": "Gene trội trong các thế hệ lai"
+      }
+     ]
+    }
+   ],
+   "yearReview": {
+    "id": "9-ontap-cuoi-nam",
+    "kind": "ontap",
+    "title": "Ôn tập cuối năm"
+   }
+  }
+ ]
+}

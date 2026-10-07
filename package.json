@@ -1,0 +1,16 @@
+{
+  "name": "giao-an-5512",
+  "version": "1.0.0",
+  "description": "Trợ lý soạn giáo án Toán 5512 - web app có backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "docx": "^9.9.0",
+    "express": "^5.2.1"
+  }
+}

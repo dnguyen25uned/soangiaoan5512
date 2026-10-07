@@ -1,0 +1,312 @@
+{
+ "lessonTitle": "Bài 35. Định lí Pythagore và ứng dụng",
+ "sections": [
+  {
+   "blocks": [
+    {
+     "level": 3,
+     "text": "1. Kiến thức",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Phát biểu được định lí Pythagore: trong một tam giác vuông, bình phương độ dài cạnh huyền bằng tổng các bình phương độ dài hai cạnh góc vuông.",
+      "Phát biểu được định lí Pythagore đảo: nếu một tam giác có bình phương độ dài một cạnh bằng tổng các bình phương độ dài hai cạnh còn lại thì tam giác đó là tam giác vuông.",
+      "Tính được độ dài một cạnh của tam giác vuông khi biết độ dài hai cạnh còn lại.",
+      "Nhận biết được một tam giác có phải là tam giác vuông hay không dựa vào độ dài ba cạnh.",
+      "Vận dụng được định lí Pythagore để giải quyết một số bài toán gắn với thực tiễn."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "2. Năng lực",
+     "type": "h"
+    },
+    {
+     "text": "Năng lực đặc thù môn Toán:",
+     "type": "p"
+    },
+    {
+     "items": [
+      "Tư duy và lập luận toán học: từ quan sát số liệu cụ thể, khái quát thành công thức tổng quát BC² = AB² + AC²; lập luận chặt chẽ khi chứng minh một tam giác là vuông.",
+      "Mô hình hoá toán học: chuyển bài toán thực tế (thang dựa tường, đường chéo sân) thành mô hình tam giác vuông.",
+      "Giải quyết vấn đề toán học: lựa chọn đúng công thức (cộng hay trừ) để tính cạnh huyền hay cạnh góc vuông.",
+      "Giao tiếp toán học: trình bày lời giải rõ ràng, sử dụng đúng kí hiệu và thuật ngữ.",
+      "Sử dụng công cụ, phương tiện học toán: dùng thước, êke vẽ hình chính xác; có thể dùng GeoGebra kiểm tra số liệu."
+     ],
+     "type": "ul"
+    },
+    {
+     "text": "Năng lực chung: tự chủ và tự học (tự tính toán, tự kiểm tra kết quả); giao tiếp và hợp tác (thảo luận nhóm, trình bày trước lớp); giải quyết vấn đề và sáng tạo (đề xuất cách giải khác).",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "3. Phẩm chất",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Chăm chỉ: tích cực tham gia tính toán, không ngại bài toán có số liệu lớn.",
+      "Trung thực: báo cáo đúng kết quả mình tính được, nhận ra và sửa lỗi sai.",
+      "Trách nhiệm: hoàn thành nhiệm vụ được giao trong nhóm; cẩn thận, chính xác trong từng bước tính."
+     ],
+     "type": "ul"
+    }
+   ],
+   "heading": "I. MỤC TIÊU"
+  },
+  {
+   "blocks": [
+    {
+     "level": 3,
+     "text": "1. Thiết bị dạy học của giáo viên",
+     "type": "h"
+    },
+    {
+     "items": [
+      "SGK Toán 8 – bộ Kết nối tri thức với cuộc sống.",
+      "Thước thẳng, êke, compa, phấn màu.",
+      "Bảng phụ hoặc máy chiếu trình chiếu hình vẽ tam giác vuông và bài toán thực tế.",
+      "Phiếu học tập cho hoạt động luyện tập."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "2. Học liệu của học sinh",
+     "type": "h"
+    },
+    {
+     "items": [
+      "SGK, vở ghi, vở bài tập.",
+      "Thước thẳng, êke, compa, bút viết các màu.",
+      "Máy tính cầm tay (dùng khi cần tính căn bậc hai)."
+     ],
+     "type": "ul"
+    }
+   ],
+   "heading": "II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU"
+  },
+  {
+   "heading": "III. TIẾN TRÌNH DẠY HỌC",
+   "blocks": [
+    {
+     "level": 3,
+     "text": "Hoạt động 1: Khởi động (5 phút)",
+     "type": "h"
+    },
+    {
+     "level": 3,
+     "text": "a) Mục tiêu",
+     "type": "h"
+    },
+    {
+     "text": "Tạo tình huống có vấn đề từ thực tế, khơi gợi nhu cầu tìm ra công thức tổng quát tính độ dài cạnh của tam giác vuông.",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "b) Nội dung",
+     "type": "h"
+    },
+    {
+     "items": [
+      "GV đặt vấn đề: Một chiếc thang dài 5 m được dựa vào tường, chân thang cách chân tường 3 m. Hỏi đầu trên của thang chạm tường ở độ cao bao nhiêu mét so với mặt đất?",
+      "HS quan sát hình vẽ, nhận ra mô hình tam giác vuông với cạnh huyền 5 m và một cạnh góc vuông 3 m.",
+      "Đáp án (GV chốt sau thảo luận): độ cao = √(5² − 3²) = √(25 − 9) = √16 = 4 (m)."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "c) Sản phẩm",
+     "type": "h"
+    },
+    {
+     "text": "Dự đoán của HS về độ cao (4 m hoặc các giá trị dự đoán khác kèm cách lí giải sơ bộ).",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "d) Tổ chức thực hiện",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Bước 1 – Chuyển giao nhiệm vụ: GV chiếu hình ảnh chiếc thang dựa tường, nêu bài toán; yêu cầu mỗi HS dự đoán độ cao và thử nêu cách tính.",
+      "Bước 2 – Thực hiện nhiệm vụ: HS suy nghĩ cá nhân trong 2 phút, ghi dự đoán vào vở nháp.",
+      "Bước 3 – Báo cáo, thảo luận: 2–3 HS nêu dự đoán; lớp nhận xét tính hợp lí (độ cao phải nhỏ hơn 5 m).",
+      "Bước 4 – Kết luận, nhận định: GV nhận xét các cách làm, đặt câu hỏi: Có công thức chung nào tính nhanh cạnh của tam giác vuông không? → Dẫn vào bài mới: Định lí Pythagore."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "Hoạt động 2: Hình thành kiến thức (15 phút)",
+     "type": "h"
+    },
+    {
+     "level": 3,
+     "text": "a) Mục tiêu",
+     "type": "h"
+    },
+    {
+     "text": "HS phát biểu được định lí Pythagore và định lí Pythagore đảo; vận dụng tính được độ dài cạnh của tam giác vuông trong các ví dụ cụ thể.",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "b) Nội dung",
+     "type": "h"
+    },
+    {
+     "items": [
+      "GV hướng dẫn HS quan sát tam giác ABC vuông tại A, gọi tên cạnh huyền BC và hai cạnh góc vuông AB, AC; giới thiệu định lí Pythagore: BC² = AB² + AC².",
+      "Định lí Pythagore đảo: nếu BC² = AB² + AC² thì tam giác ABC vuông tại A.",
+      "Ví dụ 1: Cho tam giác ABC vuông tại A, AB = 6 cm, AC = 8 cm. Tính BC. Lời giải: BC² = AB² + AC² = 6² + 8² = 36 + 64 = 100, suy ra BC = 10 cm. Đáp án: 10 cm.",
+      "Ví dụ 2: Cho tam giác DEF vuông tại D, DE = 5 cm, EF = 13 cm. Tính DF. Lời giải: EF² = DE² + DF² nên DF² = EF² − DE² = 13² − 5² = 169 − 25 = 144, suy ra DF = 12 cm. Đáp án: 12 cm.",
+      "Ví dụ 3: Ba số 6, 8, 10 có phải độ dài ba cạnh của một tam giác vuông không? Lời giải: 6² + 8² = 36 + 64 = 100 = 10². Đáp án: có, là tam giác vuông với cạnh huyền bằng 10 (theo định lí Pythagore đảo)."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "c) Sản phẩm",
+     "type": "h"
+    },
+    {
+     "text": "HS phát biểu đúng hai định lí; lời giải đầy đủ, đúng đáp án của ba ví dụ (10 cm; 12 cm; là tam giác vuông).",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "d) Tổ chức thực hiện",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Bước 1 – Chuyển giao nhiệm vụ: GV vẽ hình, phát biểu định lí; giao Ví dụ 1, 2 cho cá nhân và Ví dụ 3 cho nhóm đôi.",
+      "Bước 2 – Thực hiện nhiệm vụ: HS ghi định lí vào vở, tính toán từng ví dụ; GV quan sát, hỗ trợ HS còn lúng túng ở phép trừ trong căn.",
+      "Bước 3 – Báo cáo, thảo luận: HS lên bảng trình bày lời giải; lớp thảo luận, chỉ ra lỗi thường gặp (nhầm cạnh huyền với cạnh góc vuông).",
+      "Bước 4 – Kết luận, nhận định: GV chốt hai định lí, nhấn mạnh: muốn tính cạnh huyền thì cộng, muốn tính cạnh góc vuông thì trừ; lưu ý điều kiện áp dụng định lí đảo."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "Hoạt động 3: Luyện tập (15 phút)",
+     "type": "h"
+    },
+    {
+     "level": 3,
+     "text": "a) Mục tiêu",
+     "type": "h"
+    },
+    {
+     "text": "Củng cố kĩ năng tính độ dài cạnh của tam giác vuông; rèn kĩ năng nhận biết tam giác vuông qua độ dài ba cạnh.",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "b) Nội dung",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Bài 1: Cho tam giác MNP vuông tại M, MN = 9 cm, MP = 12 cm. Tính NP. Lời giải: NP² = MN² + MP² = 9² + 12² = 81 + 144 = 225, suy ra NP = 15 cm. Đáp án: 15 cm.",
+      "Bài 2: Một tam giác vuông có cạnh huyền dài 13 cm và một cạnh góc vuông dài 5 cm. Tính độ dài cạnh góc vuông còn lại. Lời giải: gọi cạnh cần tìm là x, ta có x² = 13² − 5² = 169 − 25 = 144, suy ra x = 12 cm. Đáp án: 12 cm.",
+      "Bài 3: Ba số 7, 24, 25 có phải độ dài ba cạnh của một tam giác vuông không? Vì sao? Lời giải: 7² + 24² = 49 + 576 = 625 = 25². Đáp án: có, là tam giác vuông với cạnh huyền bằng 25 (theo định lí Pythagore đảo)."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "c) Sản phẩm",
+     "type": "h"
+    },
+    {
+     "text": "Bài làm đầy đủ ba bài của HS với đáp án đúng: 15 cm; 12 cm; là tam giác vuông (cạnh huyền 25).",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "d) Tổ chức thực hiện",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Bước 1 – Chuyển giao nhiệm vụ: GV phát phiếu học tập gồm Bài 1, 2, 3; yêu cầu trình bày đầy đủ các bước, ghi rõ đáp án.",
+      "Bước 2 – Thực hiện nhiệm vụ: HS làm bài cá nhân trong 8 phút; GV đi quanh lớp, nhắc HS kiểm tra xem đại lượng cần tìm là cạnh huyền hay cạnh góc vuông.",
+      "Bước 3 – Báo cáo, thảo luận: 3 HS lên bảng trình bày 3 bài; lớp đối chiếu kết quả, thảo luận lỗi sai điển hình (quên lấy căn, cộng thay vì trừ).",
+      "Bước 4 – Kết luận, nhận định: GV chốt đáp án đúng, tổng kết quy trình 3 bước giải: xác định tam giác vuông → viết đúng công thức → tính toán và kết luận."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "Hoạt động 4: Vận dụng (10 phút)",
+     "type": "h"
+    },
+    {
+     "level": 3,
+     "text": "a) Mục tiêu",
+     "type": "h"
+    },
+    {
+     "text": "Vận dụng định lí Pythagore để giải quyết bài toán gắn với thực tiễn; thấy được ý nghĩa ứng dụng của toán học.",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "b) Nội dung",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Bài toán 1: Người ta đóng một khung ảnh hình chữ nhật có chiều dài 24 cm, chiều rộng 10 cm. Để kiểm tra xem khung có bị méo (không vuông góc) hay không, người thợ đo đường chéo của khung. Hỏi đường chéo của khung ảnh hình chữ nhật chuẩn phải dài bao nhiêu? Lời giải: d² = 24² + 10² = 576 + 100 = 676, suy ra d = 26 cm. Đáp án: 26 cm.",
+      "Bài toán 2 (mở rộng, về nhà): Một cột điện cao 8 m bị gió làm gãy gập, đỉnh cột chạm đất cách chân cột 6 m (gốc cột vẫn đứng yên). Tính độ cao của chỗ cột bị gãy so với mặt đất. Gợi ý: gọi chỗ gãy cao x mét, đoạn gãy dài (8 − x) mét là cạnh huyền; ta có (8 − x)² = x² + 6², giải ra x = 1,75. Đáp án: 1,75 m."
+     ],
+     "type": "ul"
+    },
+    {
+     "level": 3,
+     "text": "c) Sản phẩm",
+     "type": "h"
+    },
+    {
+     "text": "Lời giải bài toán khung ảnh của HS (đáp án 26 cm); hướng giải bài toán cột điện (dành cho HS khá, giỏi).",
+     "type": "p"
+    },
+    {
+     "level": 3,
+     "text": "d) Tổ chức thực hiện",
+     "type": "h"
+    },
+    {
+     "items": [
+      "Bước 1 – Chuyển giao nhiệm vụ: GV nêu bài toán khung ảnh, yêu cầu HS vẽ hình minh hoạ trước khi tính.",
+      "Bước 2 – Thực hiện nhiệm vụ: HS thảo luận nhóm 4, vẽ hình chữ nhật và đường chéo, tính toán.",
+      "Bước 3 – Báo cáo, thảo luận: Đại diện 1–2 nhóm trình bày; lớp nhận xét cách vẽ hình và tính toán.",
+      "Bước 4 – Kết luận, nhận định: GV chốt đáp án 26 cm, liên hệ thực tế nghề mộc; giao bài toán cột điện về nhà cho HS khá, giỏi."
+     ],
+     "type": "ul"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "items": [
+      "Đa số HS tính đúng cạnh huyền nhưng một số còn nhầm phép trừ khi tính cạnh góc vuông → tiết sau dành 5 phút đầu giờ củng cố dạng toán này.",
+      "Bài toán cột điện (vận dụng cao) chỉ giao cho HS khá, giỏi; với lớp đại trà có thể thay bằng bài toán tính đường chéo màn hình đơn giản hơn.",
+      "Cần chuẩn bị thêm hình ảnh trực quan (thang, khung ảnh thật) để tăng hứng thú ở hoạt động khởi động."
+     ],
+     "type": "ul"
+    }
+   ],
+   "heading": "IV. ĐIỀU CHỈNH SAU BÀI DẠY"
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trợ lý soạn giáo án Toán 5512</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="wrap">
+    <h1>Trợ lý soạn giáo án Toán 5512</h1>
+    <p class="subtitle">Môn Toán THCS (lớp 6&ndash;9) &bull; Bộ sách duy nhất:
+      <strong>Kết nối tri thức với cuộc sống</strong> (NXB Giáo dục Việt Nam)</p>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <section class="col-left">
+    <div class="card">
+      <h2>Thông tin giáo viên</h2>
+      <p class="hint">Chỉ hiện trên giao diện và trong file Word xuất ra.
+        <strong>Không bao giờ</strong> gửi cho AI.</p>
+      <div class="form-grid">
+        <label>Đơn vị cấp trên
+          <input id="f-upper" type="text" placeholder="VD: PHÒNG GD&ĐT ..." autocomplete="off">
+        </label>
+        <label>Tên trường
+          <input id="f-school" type="text" placeholder="VD: Trường THCS ..." autocomplete="off">
+        </label>
+        <label>Tổ chuyên môn
+          <input id="f-dept" type="text" placeholder="VD: TỔ TOÁN - TIN" autocomplete="off">
+        </label>
+        <label>Họ và tên giáo viên
+          <input id="f-teacher" type="text" placeholder="VD: Nguyễn Văn A" autocomplete="off">
+        </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Cài đặt AI</h2>
+      <p class="hint">Khóa API chỉ lưu <strong>trên máy chủ</strong>, không hiển thị lại. Cần có key thì nút "Soạn giáo án" mới chạy được.</p>
+      <div class="form-grid">
+        <label>API base URL
+          <input id="s-baseurl" type="text" placeholder="https://api.openai.com/v1" autocomplete="off">
+        </label>
+        <label>Model
+          <input id="s-model" type="text" placeholder="gpt-4o-mini" autocomplete="off">
+        </label>
+      </div>
+      <label class="block-label">API key
+        <input id="s-key" type="password" placeholder="Dán key rồi bấm Lưu (không hiện lại)" autocomplete="off">
+      </label>
+      <div class="row btn-row">
+        <button id="btn-save-settings" class="btn">Lưu cài đặt</button>
+        <button id="btn-test-settings" class="btn secondary">Kiểm tra kết nối</button>
+      </div>
+      <p id="settings-status" class="hint"></p>
+    </div>
+
+    <div class="card">
+      <h2>1. Chọn bài học</h2>
+      <div class="row">
+        <label class="grow">Lớp
+          <select id="grade-select"></select>
+        </label>
+        <label class="grow2">Chương
+          <select id="chapter-select"></select>
+        </label>
+      </div>
+      <input id="search" type="text" placeholder="Tìm bài học&hellip; (tìm trong cả 4 lớp)" autocomplete="off">
+      <div id="item-list" class="item-list" aria-live="polite"></div>
+      <div id="counts" class="counts"></div>
+    </div>
+
+    <div class="card">
+      <h2>Tự kiểm tra danh mục</h2>
+      <div id="check-result" class="check-result"><p class="hint">Đang kiểm tra&hellip;</p></div>
+    </div>
+  </section>
+
+  <section class="col-right">
+    <div class="card">
+      <h2>Bài đã chọn</h2>
+      <div id="selected-info"><p class="hint">Hãy chọn một bài học ở cột bên trái.</p></div>
+    </div>
+
+    <div class="card">
+      <h2>2. Soạn giáo án bằng AI</h2>
+      <div class="mode-tabs" id="mode-tabs" role="tablist">
+        <button class="mode-tab active" data-mode="chi-tiet"><strong>Chi tiết</strong><span>Đầy đủ nhất, ~1 phút</span></button>
+        <button class="mode-tab" data-mode="khung-nhanh"><strong>Khung nhanh</strong><span>Gọn, ổn định</span></button>
+        <button class="mode-tab" data-mode="phan-hoa"><strong>Phân hoá</strong><span>Bài tập 3 mức độ</span></button>
+      </div>
+      <div class="row radio-row">
+        <span class="row-label">Thời lượng:</span>
+        <label class="radio"><input type="radio" name="duration" value="1" checked> 1 tiết (45 phút)</label>
+        <label class="radio"><input type="radio" name="duration" value="2"> 2 tiết (90 phút)</label>
+      </div>
+      <div class="focus-head">
+        <span class="row-label">Trọng tâm bài học</span>
+        <button id="btn-focus" class="btn small secondary">Gợi ý bằng AI</button>
+      </div>
+      <div id="focus-list" class="focus-list"><p class="hint">Chưa có trọng tâm. Bấm "Gợi ý bằng AI" hoặc thêm thủ công bên dưới.</p></div>
+      <div class="row">
+        <input id="focus-custom" type="text" placeholder="Thêm trọng tâm khác&hellip;" autocomplete="off">
+        <button id="btn-focus-add" class="btn small">Thêm</button>
+      </div>
+      <label class="block-label">Yêu cầu thêm
+        <textarea id="extra" rows="2" placeholder="VD: tăng bài tập vận dụng thực tế, dùng GeoGebra minh hoạ&hellip;"></textarea>
+      </label>
+      <button id="btn-generate" class="btn primary big">Soạn giáo án</button>
+      <div id="progress" class="progress hidden">
+        <div class="progress-top"><span id="progress-label">Đang soạn&hellip;</span><span id="progress-clock">00:00</span></div>
+        <div class="progress-bar"><div id="progress-fill"></div></div>
+        <ul id="progress-steps"></ul>
+      </div>
+      <p id="generate-error" class="error hidden"></p>
+    </div>
+
+    <div class="card">
+      <h2>Xem trước (khổ A4)</h2>
+      <p class="hint">Sửa trực tiếp trên trang. Dùng các nút bên dưới để lưu vào thư viện hoặc xuất file Word.</p>
+      <div class="row btn-row">
+        <button id="btn-save-library" class="btn">Lưu vào thư viện</button>
+        <button id="btn-export-docx" class="btn primary">Xuất Word (.docx)</button>
+      </div>
+      <p id="library-status" class="hint"></p>
+      <div id="preview" class="paper" contenteditable="true">
+        <p class="hint">Giáo án soạn xong sẽ hiện ở đây.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Thư viện giáo án (lưu trên máy chủ)</h2>
+      <p class="hint">Giáo án đã lưu: mở lại để xem/sửa, xuất Word hoặc xoá.</p>
+      <div id="library-list" class="item-list"><p class="hint">Đang tải…</p></div>
+    </div>
+
+    <div class="card roadmap">
+      <h2>Lộ trình phát triển</h2>
+      <ol>
+        <li><strong>Bước 1 &mdash; xong:</strong> khung ứng dụng + danh mục 283 mục / 151 bài chính.</li>
+        <li><strong>Bước 2 &mdash; xong:</strong> AI soạn giáo án 3 chế độ, xem trước A4 sửa trực tiếp.</li>
+        <li><strong>Bước 3 &mdash; xong:</strong> thư viện lưu trên máy chủ (lưu / mở lại / cập nhật / xoá)
+          và xuất file Word <strong>.docx</strong> thật (A4, Times New Roman 14, lề chuẩn, số trang, khối chữ ký).</li>
+      </ol>
+      <p class="hint">Riêng tư: họ tên giáo viên và thông tin trường/tổ không được đưa vào prompt gửi cho AI &mdash;
+        máy chủ tách bỏ các trường này trước khi gọi AI.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <div class="wrap">
+    <p>Trợ lý soạn giáo án Toán 5512 &bull; Mẫu giáo án theo Công văn 5512/BGDĐT &bull;
+      SGK Toán THCS bộ <em>Kết nối tri thức với cuộc sống</em></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
