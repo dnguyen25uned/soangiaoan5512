@@ -192,7 +192,7 @@ function loadSettings() {
   try {
     return JSON.parse(fs.readFileSync(SETTINGS_PATH, 'utf8'));
   } catch {
-    return { baseUrl: 'https://api.groq.com/openai/v1', model: 'llama-3.3-70b-versatile', apiKey: '' };
+    return { baseUrl: 'https://api.openai.com/v1', model: 'gpt-4o-mini', apiKey: '' };
   }
 }
 
@@ -204,8 +204,8 @@ function saveSettings(s) {
 app.get('/api/settings', (req, res) => {
   const s = loadSettings();
   res.json({
-    baseUrl: s.baseUrl || 'https://api.groq.com/openai/v1',
-    model: s.model || 'llama-3.3-70b-versatile',
+    baseUrl: s.baseUrl || 'https://api.openai.com/v1',
+    model: s.model || 'gpt-4o-mini',
     hasKey: !!s.apiKey,
     keyTail: s.apiKey ? '…' + String(s.apiKey).slice(-4) : '',
   });
