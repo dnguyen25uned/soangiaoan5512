@@ -52,6 +52,10 @@ function friendlyLlmError(raw) {
       'nên dùng chế độ Khung nhanh thay vì Chi tiết.';
   } else if (/LLM HTTP 503/.test(msg)) {
     hint = 'Google đang quá tải tạm thời (503). Đợi một lúc rồi thử lại; app đã tự thử lại 3 lần.';
+  } else if (/Expected ',' or '\]'|Unexpected token|is not valid JSON|Không tìm thấy JSON/i.test(msg)) {
+    hint =
+      'AI trả về dữ liệu sai định dạng (hay gặp ở model miễn phí nhỏ hoặc phản hồi bị cắt cụt; ' +
+      'app đã tự vá và thử lại). Hãy bấm Soạn lại; nếu vẫn lỗi, chuyển sang chế độ Khung nhanh (nhẹ hơn, ít lỗi hơn).';
   }
   const tech = msg.length > 320 ? msg.slice(0, 320) + '…' : msg;
   return hint ? `${hint}\nChi tiết kỹ thuật: ${tech}` : tech;
