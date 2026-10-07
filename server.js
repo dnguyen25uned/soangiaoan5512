@@ -192,7 +192,7 @@ function loadSettings() {
   try {
     return JSON.parse(fs.readFileSync(SETTINGS_PATH, 'utf8'));
   } catch {
-    return { baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai', model: 'gemini-3-flash-preview', apiKey: '' };
+    return { baseUrl: 'https://api.groq.com/openai/v1', model: 'llama-3.3-70b-versatile', apiKey: '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' };
   }
 }
 
@@ -204,8 +204,8 @@ function saveSettings(s) {
 app.get('/api/settings', (req, res) => {
   const s = loadSettings();
   res.json({
-    baseUrl: s.baseUrl || 'https://generativelanguage.googleapis.com/v1beta/openai',
-    model: s.model || 'gemini-3-flash-preview',
+    baseUrl: s.baseUrl || 'https://api.groq.com/openai/v1',
+    model: s.model || 'llama-3.3-70b-versatile',
     hasKey: !!s.apiKey,
     keyTail: s.apiKey ? '…' + String(s.apiKey).slice(-4) : '',
   });
