@@ -204,8 +204,8 @@ function saveSettings(s) {
 app.get('/api/settings', (req, res) => {
   const s = loadSettings();
   res.json({
-    baseUrl: s.baseUrl || 'https://api.groq.com/openai/v1',
-    model: s.model || 'openai/gpt-oss-120b',
+    baseUrl: s.baseUrl || 'https://api.openai.com/v1',
+    model: s.model || 'gpt-4o-mini',
     hasKey: !!s.apiKey,
     keyTail: s.apiKey ? '…' + String(s.apiKey).slice(-4) : '',
   });
@@ -480,6 +480,48 @@ app.get('/api/library/:id', (req, res) => {
   res.json(entry);
 });
 
+/** Chuẩn hoá mảng segments (công thức) gửi từ client; null nếu không hợp lệ. */
+function sanitizeSegments(segs, depth) {
+  if (!Array.isArray(segs) || depth > 4) return null;
+  const out = [];
+  const textLen = (ss) => {
+    let n = 0;
+    for (const x of ss || []) {
+      if (!x || typeof x !== 'object') continue;
+      if (typeof x.text === 'string') n += x.text.length;
+      else if (x.frac) n += textLen(x.frac.num) + textLen(x.frac.den);
+      else if (x.sqrt) n += textLen(x.sqrt.n) + textLen(x.sqrt.body);
+    }
+    return n;
+  };
+  for (const s of segs) {
+    if (out.length >= 200) break;
+    if (!s || typeof s !== 'object') continue;
+    if (s.frac && typeof s.frac === 'object') {
+      const num = sanitizeSegments(s.frac.num, depth + 1);
+      const den = sanitizeSegments(s.frac.den, depth + 1);
+      if (num && den && textLen(num) + textLen(den) > 0) out.push({ frac: { num, den } });
+    } else if (s.sqrt && typeof s.sqrt === 'object') {
+      const body = sanitizeSegments(s.sqrt.body, depth + 1);
+      const n = s.sqrt.n != null ? sanitizeSegments(s.sqrt.n, depth + 1) : null;
+      if (body && textLen(body) > 0) out.push({ sqrt: { n, body } });
+    } else if (typeof s.text === 'string' && s.text) {
+      out.push({ text: s.text.slice(0, 500), sup: !!s.sup, sub: !!s.sub });
+    }
+  }
+  return out;
+}
+
+/** Chuẩn hoá 1 item của danh sách (string thuần hoặc { segments }). */
+function sanitizeItem(it) {
+  if (it && typeof it === 'object' && Array.isArray(it.segments)) {
+    const segs = sanitizeSegments(it.segments, 0);
+    if (segs && segs.length) return { segments: segs };
+    return '';
+  }
+  return String(it == null ? '' : it).slice(0, 2000);
+}
+
 /** Chuẩn hoá giáo án trước khi lưu: chỉ giữ các trường hợp lệ. */
 function sanitizePlan(raw) {
   if (!raw || typeof raw !== 'object' || !Array.isArray(raw.sections) || !raw.sections.length) {
@@ -495,14 +537,18 @@ function sanitizePlan(raw) {
           if (b.type === 'ul' || b.type === 'ol') {
             return {
               type: b.type,
-              items: (Array.isArray(b.items) ? b.items : []).map(String).slice(0, 200),
+              items: (Array.isArray(b.items) ? b.items : [])
+                .map(sanitizeItem)
+                .filter((it) => it !== '')
+                .slice(0, 200),
             };
           }
-          return {
-            type: b.type === 'h' ? 'h' : 'p',
-            level: Number(b.level) || 3,
-            text: String(b.text || ''),
-          };
+          const base = { type: b.type === 'h' ? 'h' : 'p', level: Number(b.level) || 3 };
+          if (Array.isArray(b.segments)) {
+            const segs = sanitizeSegments(b.segments, 0);
+            if (segs && segs.length) return { ...base, segments: segs };
+          }
+          return { ...base, text: String(b.text || '').slice(0, 20000) };
         })
         .slice(0, 400),
     }))

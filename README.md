@@ -103,3 +103,10 @@ Ví dụ dùng key miễn phí Google AI Studio (Gemini):
   số trang ở chân trang, đầu trang 2 cột (trái "ĐƠN VỊ CẤP TRÊN" + tên trường;
   phải "TỔ CHUYÊN MÔN" + họ tên giáo viên), khối chữ ký "TỔ TRƯỞNG" | "GIÁO VIÊN".
   Đã kiểm thử end-to-end qua API và kiểm chứng trực tiếp cấu trúc OOXML.
+- **Bước 4** (xong): thanh công thức toán học kiểu MathType ngay trên khung soạn thảo:
+  hàng nút ký hiệu (×, ÷, ±, ≤, ≥, ≠, π, √, ∈, ℕ, ℤ, ℚ, ℝ, α, β, γ, …, ², ³, ∑, ∫)
+  và các cấu trúc phân số, số mũ, chỉ số dưới, căn bậc hai, căn bậc n, trị tuyệt đối.
+  Chèn tại vị trí con trỏ; bôi đen text rồi bấm nút sẽ đưa text vào cấu trúc.
+  Công thức được giữ nguyên khi lưu vào thư viện, mở lại và xuất Word
+  (số mũ/chỉ số dưới ra đúng định dạng Word; phân số ra dạng tử ⁄ mẫu;
+  căn thức ra dạng √(…)).

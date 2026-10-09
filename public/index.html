@@ -120,7 +120,25 @@
 
     <div class="card">
       <h2>Xem trước (khổ A4)</h2>
-      <p class="hint">Sửa trực tiếp trên trang. Dùng các nút bên dưới để lưu vào thư viện hoặc xuất file Word.</p>
+      <p class="hint">Sửa trực tiếp trên trang. Dùng thanh công thức để chèn ký hiệu và cấu trúc toán học
+        (kiểu MathType); mọi chỉnh sửa — kể cả công thức — đều được giữ khi lưu vào thư viện và xuất Word.</p>
+      <div class="math-toolbar" id="math-toolbar">
+        <div class="math-group">
+          <span class="math-group-label">Ký hiệu:</span>
+          <div class="math-btns" id="math-symbols"></div>
+        </div>
+        <div class="math-group">
+          <span class="math-group-label">Cấu trúc:</span>
+          <div class="math-btns">
+            <button type="button" class="mbtn struct" data-struct="frac" title="Phân số">a⁄b</button>
+            <button type="button" class="mbtn struct" data-struct="sup" title="Số mũ (x²)">x<sup>□</sup></button>
+            <button type="button" class="mbtn struct" data-struct="sub" title="Chỉ số dưới (x₁)">x<sub>□</sub></button>
+            <button type="button" class="mbtn struct" data-struct="sqrt" title="Căn bậc hai">√□</button>
+            <button type="button" class="mbtn struct" data-struct="nroot" title="Căn bậc n">ⁿ√□</button>
+            <button type="button" class="mbtn struct" data-struct="abs" title="Trị tuyệt đối">|□|</button>
+          </div>
+        </div>
+      </div>
       <div class="row btn-row">
         <button id="btn-save-library" class="btn">Lưu vào thư viện</button>
         <button id="btn-export-docx" class="btn primary">Xuất Word (.docx)</button>
@@ -144,6 +162,9 @@
         <li><strong>Bước 2 &mdash; xong:</strong> AI soạn giáo án 3 chế độ, xem trước A4 sửa trực tiếp.</li>
         <li><strong>Bước 3 &mdash; xong:</strong> thư viện lưu trên máy chủ (lưu / mở lại / cập nhật / xoá)
           và xuất file Word <strong>.docx</strong> thật (A4, Times New Roman 14, lề chuẩn, số trang, khối chữ ký).</li>
+        <li><strong>Bước 4 &mdash; xong:</strong> thanh công thức toán học kiểu MathType trên khung soạn thảo
+          (ký hiệu, phân số, số mũ, chỉ số dưới, căn thức, trị tuyệt đối); công thức chèn vào được giữ nguyên
+          khi lưu thư viện và xuất Word.</li>
       </ol>
       <p class="hint">Riêng tư: họ tên giáo viên và thông tin trường/tổ không được đưa vào prompt gửi cho AI &mdash;
         máy chủ tách bỏ các trường này trước khi gọi AI.</p>

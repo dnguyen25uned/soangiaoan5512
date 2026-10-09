@@ -216,6 +216,7 @@ async function init() {
   initTeacherForm();
   initStep2();
   initStep3();
+  initMathToolbar();
 }
 
 document.addEventListener('DOMContentLoaded', init);
@@ -501,21 +502,62 @@ async function generate() {
 }
 
 /* ---- Xem trước A4 ---- */
+/** Dựng DOM cho 1 mảng segments (ký hiệu/cấu trúc công thức) vào parent. */
+function renderSegments(parent, segments) {
+  for (const s of segments || []) {
+    if (!s || typeof s !== 'object') continue;
+    if (s.frac && Array.isArray(s.frac.num) && Array.isArray(s.frac.den)) {
+      const f = mathSpan('mfrac'), num = mathSpan('mnum'), den = mathSpan('mden');
+      renderSegments(num, s.frac.num);
+      renderSegments(den, s.frac.den);
+      f.appendChild(num);
+      f.appendChild(den);
+      parent.appendChild(f);
+    } else if (s.sqrt && Array.isArray(s.sqrt.body)) {
+      const w = mathSpan('msqrt');
+      if (Array.isArray(s.sqrt.n)) {
+        const nn = mathSpan('mrootn');
+        renderSegments(nn, s.sqrt.n);
+        w.appendChild(nn);
+      }
+      const rad = mathSpan('mrad');
+      rad.textContent = '√';
+      const body = mathSpan('mbody');
+      renderSegments(body, s.sqrt.body);
+      w.appendChild(rad);
+      w.appendChild(body);
+      parent.appendChild(w);
+    } else if (typeof s.text === 'string' && s.text) {
+      const t = document.createTextNode(s.text);
+      if (s.sup || s.sub) {
+        const el = document.createElement(s.sup ? 'sup' : 'sub');
+        el.appendChild(t);
+        parent.appendChild(el);
+      } else {
+        parent.appendChild(t);
+      }
+    }
+  }
+}
+
 function renderBlock(b) {
   let el;
   if (b.type === 'h') {
     el = document.createElement('h' + Math.min(4, Math.max(2, b.level || 3)));
-    el.textContent = b.text || '';
+    if (Array.isArray(b.segments)) renderSegments(el, b.segments);
+    else el.textContent = b.text || '';
   } else if (b.type === 'ul' || b.type === 'ol') {
     el = document.createElement(b.type);
     for (const it of b.items || []) {
       const li = document.createElement('li');
-      li.textContent = it;
+      if (it && typeof it === 'object' && Array.isArray(it.segments)) renderSegments(li, it.segments);
+      else li.textContent = it == null ? '' : String(it);
       el.appendChild(li);
     }
   } else {
     el = document.createElement('p');
-    el.textContent = b.text || '';
+    if (Array.isArray(b.segments)) renderSegments(el, b.segments);
+    else el.textContent = b.text || '';
   }
   return el;
 }
@@ -539,6 +581,318 @@ function renderPlan(plan) {
     for (const b of sec.blocks || []) root.appendChild(renderBlock(b));
   }
   if (root.scrollIntoView) root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ================= Bước 4: thanh công thức toán học (kiểu MathType) ================= */
+
+const MATH_SYMBOLS = [
+  '±', '∓', '×', '÷', '·', '≤', '≥', '≠', '≈', '≡', '⇒', '⇔', '∞',
+  'π', '°', '′', '√', '∛', 'Δ', '∠', '⊥', '∥',
+  '∈', '∉', '⊂', '⊆', '∪', '∩', '∅', 'ℕ', 'ℤ', 'ℚ', 'ℝ',
+  'α', 'β', 'γ', 'θ', 'λ', 'μ', 'σ', 'φ', 'ω',
+  '²', '³', '∑', '∫',
+];
+
+let savedMathRange = null;
+
+/** Lưu vùng chọn hiện tại nếu nằm trong khung soạn thảo. */
+function mathSaveSelection() {
+  const sel = window.getSelection();
+  const root = $('preview');
+  if (sel && sel.rangeCount && root && root.contains(sel.getRangeAt(0).commonAncestorContainer)) {
+    savedMathRange = sel.getRangeAt(0).cloneRange();
+  }
+}
+
+/** Khôi phục vùng chọn đã lưu; chưa có thì đặt caret ở cuối khung soạn thảo. */
+function mathRestoreSelection() {
+  const root = $('preview');
+  const sel = window.getSelection();
+  if (savedMathRange && root.contains(savedMathRange.commonAncestorContainer)) {
+    sel.removeAllRanges();
+    sel.addRange(savedMathRange);
+    return savedMathRange;
+  }
+  root.focus();
+  const range = document.createRange();
+  range.selectNodeContents(root);
+  range.collapse(false);
+  sel.removeAllRanges();
+  sel.addRange(range);
+  return range;
+}
+
+function mathPlaceCaretAfter(node) {
+  const sel = window.getSelection();
+  const r = document.createRange();
+  r.setStartAfter(node);
+  r.collapse(true);
+  sel.removeAllRanges();
+  sel.addRange(r);
+}
+
+function mathPlaceCaretInside(el, atEnd) {
+  const sel = window.getSelection();
+  const r = document.createRange();
+  r.selectNodeContents(el);
+  r.collapse(!atEnd);
+  sel.removeAllRanges();
+  sel.addRange(r);
+}
+
+function mathAfterInsert() {
+  mathSaveSelection();
+  const root = $('preview');
+  if (root) root.focus();
+}
+
+/** Chèn ký hiệu toán học (text thuần) tại vị trí con trỏ. */
+function mathInsertSymbol(sym) {
+  const range = mathRestoreSelection();
+  range.deleteContents();
+  const t = document.createTextNode(sym);
+  range.insertNode(t);
+  mathPlaceCaretAfter(t);
+  mathAfterInsert();
+}
+
+function mathSpan(cls) {
+  const s = document.createElement('span');
+  s.className = cls;
+  return s;
+}
+
+/** Dựng cấu trúc công thức; trả về { node, focus } (focus = ô nhập đầu tiên). */
+function mathBuildStructure(kind) {
+  if (kind === 'frac') {
+    const f = mathSpan('mfrac'), num = mathSpan('mnum'), den = mathSpan('mden');
+    f.appendChild(num);
+    f.appendChild(den);
+    return { node: f, focus: num };
+  }
+  if (kind === 'sqrt' || kind === 'nroot') {
+    const w = mathSpan('msqrt');
+    let first = null;
+    if (kind === 'nroot') { first = mathSpan('mrootn'); w.appendChild(first); }
+    const rad = mathSpan('mrad');
+    rad.textContent = '√';
+    const body = mathSpan('mbody');
+    w.appendChild(rad);
+    w.appendChild(body);
+    return { node: w, focus: first || body };
+  }
+  if (kind === 'abs') {
+    const w = mathSpan('mabs');
+    const b = mathSpan('mabsb');
+    w.appendChild(document.createTextNode('|'));
+    w.appendChild(b);
+    w.appendChild(document.createTextNode('|'));
+    return { node: w, focus: b };
+  }
+  return null;
+}
+
+/** Chèn cấu trúc công thức; nếu đang bôi đen text thì đưa vào ô thích hợp. */
+function mathInsertStructure(kind) {
+  if (kind === 'sup' || kind === 'sub') {
+    const range = mathRestoreSelection();
+    const el = document.createElement(kind);
+    if (!range.collapsed) {
+      el.appendChild(range.extractContents());
+      range.insertNode(el);
+      mathPlaceCaretAfter(el);
+    } else {
+      range.deleteContents();
+      range.insertNode(el);
+      mathPlaceCaretInside(el, false);
+    }
+    mathAfterInsert();
+    return;
+  }
+  const built = mathBuildStructure(kind);
+  if (!built) return;
+  const range = mathRestoreSelection();
+  let focus = built.focus;
+  let atEnd = false;
+  if (!range.collapsed) {
+    const frag = range.extractContents();
+    if (kind === 'frac') {
+      built.focus.appendChild(frag);
+      atEnd = true;
+    } else {
+      const slot = built.node.querySelector('.mbody, .mabsb') || built.focus;
+      slot.appendChild(frag);
+      focus = slot;
+      atEnd = true;
+    }
+  } else {
+    range.deleteContents();
+  }
+  range.insertNode(built.node);
+  mathPlaceCaretInside(focus, atEnd);
+  mathAfterInsert();
+}
+
+function initMathToolbar() {
+  const bar = $('math-toolbar');
+  if (!bar) return;
+  const symBox = $('math-symbols');
+  for (const s of MATH_SYMBOLS) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mbtn';
+    b.textContent = s;
+    b.title = 'Chèn ký hiệu ' + s;
+    b.addEventListener('mousedown', (e) => { e.preventDefault(); mathSaveSelection(); });
+    b.addEventListener('click', () => mathInsertSymbol(s));
+    symBox.appendChild(b);
+  }
+  bar.querySelectorAll('[data-struct]').forEach((b) => {
+    b.addEventListener('mousedown', (e) => { e.preventDefault(); mathSaveSelection(); });
+    b.addEventListener('click', () => mathInsertStructure(b.getAttribute('data-struct')));
+  });
+  const root = $('preview');
+  if (root) {
+    root.addEventListener('keyup', mathSaveSelection);
+    root.addEventListener('mouseup', mathSaveSelection);
+  }
+}
+
+/* ---- Đọc nội dung đã sửa trong khung soạn thảo thành plan JSON ----
+   Mọi chỉnh sửa tay — kể cả công thức chèn bằng thanh công thức — đều được
+   giữ lại khi lưu vào thư viện và xuất Word. */
+
+const MATH_MAX_DEPTH = 4;
+
+/** Text thuần của 1 mảng segments (để kiểm tra rỗng). */
+function mathSegsText(segs) {
+  let t = '';
+  for (const s of segs || []) {
+    if (!s || typeof s !== 'object') continue;
+    if (typeof s.text === 'string') t += s.text;
+    else if (s.frac) {
+      const nt = mathSegsText(s.frac.num);
+      const dt = mathSegsText(s.frac.den);
+      if (nt || dt) t += nt + '/' + dt;
+    } else if (s.sqrt) {
+      const bt = mathSegsText(s.sqrt.body);
+      if (bt) t += '√' + bt;
+    }
+  }
+  return t;
+}
+
+/** Đọc các node inline thành mảng segments; gộp text thuần liền kề. */
+function mathInlineSegments(node, depth) {
+  const segs = [];
+  const pushText = (t, attrs) => {
+    t = String(t == null ? '' : t).replace(/[\u200B\u2028\u2029]/g, '');
+    if (!t) return;
+    const a = attrs || {};
+    const last = segs[segs.length - 1];
+    if (last && typeof last.text === 'string' && !last.frac && !last.sqrt &&
+        !!last.sup === !!a.sup && !!last.sub === !!a.sub) {
+      last.text += t;
+    } else {
+      segs.push({ text: t, sup: !!a.sup, sub: !!a.sub });
+    }
+  };
+  if (!node || depth > MATH_MAX_DEPTH) {
+    if (node) pushText(node.textContent);
+    return segs;
+  }
+  for (const child of node.childNodes) {
+    if (child.nodeType === 3) {
+      pushText(child.textContent);
+    } else if (child.nodeType === 1) {
+      const tag = child.tagName;
+      if (tag === 'SUP') pushText(child.textContent, { sup: true });
+      else if (tag === 'SUB') pushText(child.textContent, { sub: true });
+      else if (tag === 'BR') pushText(' ');
+      else if (child.classList.contains('mfrac')) {
+        const numEl = child.querySelector('.mnum');
+        const denEl = child.querySelector('.mden');
+        segs.push({
+          frac: {
+            num: mathInlineSegments(numEl || child, depth + 1),
+            den: mathInlineSegments(denEl || child, depth + 1),
+          },
+        });
+      } else if (child.classList.contains('msqrt')) {
+        const nEl = child.querySelector('.mrootn');
+        const bodyEl = child.querySelector('.mbody');
+        segs.push({
+          sqrt: {
+            n: nEl ? mathInlineSegments(nEl, depth + 1) : null,
+            body: mathInlineSegments(bodyEl || child, depth + 1),
+          },
+        });
+      } else {
+        // B, I, SPAN thường, .mabs (|…|): đọc xuyên qua, giữ text bên trong
+        for (const s of mathInlineSegments(child, depth + 1)) segs.push(s);
+      }
+    }
+  }
+  return segs;
+}
+
+/** Chuyển 1 element khối (p/h) thành block; null nếu rỗng. */
+function mathBlockFromEl(el, type, level) {
+  const segs = mathInlineSegments(el, 0);
+  if (!mathSegsText(segs).trim()) return null;
+  const hasRich = segs.some((s) => s.frac || s.sqrt || s.sup || s.sub);
+  const block = { type };
+  if (type === 'h') block.level = level || 3;
+  if (hasRich) block.segments = segs;
+  else block.text = mathSegsText(segs);
+  return block;
+}
+
+/** Chuyển 1 <li> thành item (string hoặc { segments }); null nếu rỗng. */
+function mathItemFromLi(li) {
+  const segs = mathInlineSegments(li, 0);
+  if (!mathSegsText(segs).trim()) return null;
+  const hasRich = segs.some((s) => s.frac || s.sqrt || s.sup || s.sub);
+  return hasRich ? { segments: segs } : mathSegsText(segs);
+}
+
+/** Đọc toàn bộ khung soạn thảo thành plan, giữ nguyên tiêu đề/meta của currentPlan. */
+function collectPlanFromPreview() {
+  if (!currentPlan) return null;
+  const root = $('preview');
+  if (!root) return null;
+  const sections = [];
+  let cur = null;
+  const ensureSection = () => {
+    if (!cur) { cur = { heading: '', blocks: [] }; sections.push(cur); }
+    return cur;
+  };
+  for (const el of root.children) {
+    if (el.nodeType !== 1) continue;
+    const tag = el.tagName;
+    if (tag === 'H1' || el.classList.contains('plan-meta') || el.classList.contains('hint')) continue;
+    if (tag === 'H2') {
+      cur = { heading: el.textContent.trim(), blocks: [] };
+      sections.push(cur);
+    } else if (tag === 'H3' || tag === 'H4') {
+      const b = mathBlockFromEl(el, 'h', tag === 'H3' ? 3 : 4);
+      if (b) ensureSection().blocks.push(b);
+    } else if (tag === 'UL' || tag === 'OL') {
+      const items = [];
+      for (const li of el.querySelectorAll(':scope > li')) {
+        const it = mathItemFromLi(li);
+        if (it != null) items.push(it);
+      }
+      if (items.length) ensureSection().blocks.push({ type: tag === 'UL' ? 'ul' : 'ol', items });
+    } else if (tag === 'P' || tag === 'DIV') {
+      const b = mathBlockFromEl(el, 'p');
+      if (b) ensureSection().blocks.push(b);
+    } else if (el.textContent && el.textContent.trim()) {
+      ensureSection().blocks.push({ type: 'p', text: el.textContent.trim() });
+    }
+  }
+  if (!sections.length) return null;
+  return { lessonTitle: currentPlan.lessonTitle, meta: currentPlan.meta, sections };
 }
 
 /* ================= Bước 3: Thư viện + xuất Word ================= */
@@ -576,12 +930,13 @@ async function downloadDocx(fetchOpts) {
 }
 
 async function saveLibrary() {
-  if (!currentPlan) { setLibraryStatus('Chưa có giáo án. Hãy soạn giáo án trước.'); return; }
+  const plan = collectPlanFromPreview() || currentPlan;
+  if (!plan) { setLibraryStatus('Chưa có giáo án. Hãy soạn giáo án trước.'); return; }
   const btn = $('btn-save-library');
   btn.disabled = true;
   setLibraryStatus('Đang lưu…');
   try {
-    const body = JSON.stringify({ plan: currentPlan, teacherInfo: readTeacherInfo() });
+    const body = JSON.stringify({ plan, teacherInfo: readTeacherInfo() });
     if (currentLibraryId) {
       const r = await fetch('/api/library/' + encodeURIComponent(currentLibraryId), {
         method: 'PUT', headers: { 'Content-Type': 'application/json' }, body,
@@ -607,7 +962,8 @@ async function saveLibrary() {
 }
 
 async function exportDocx() {
-  if (!currentPlan) { setLibraryStatus('Chưa có giáo án. Hãy soạn giáo án trước.'); return; }
+  const plan = collectPlanFromPreview() || currentPlan;
+  if (!plan) { setLibraryStatus('Chưa có giáo án. Hãy soạn giáo án trước.'); return; }
   const btn = $('btn-export-docx');
   btn.disabled = true;
   setLibraryStatus('Đang xuất file Word…');
@@ -615,7 +971,7 @@ async function exportDocx() {
     await downloadDocx({
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ plan: currentPlan, teacherInfo: readTeacherInfo() }),
+      body: JSON.stringify({ plan, teacherInfo: readTeacherInfo() }),
     });
     setLibraryStatus('Đã xuất file Word.');
   } catch (e) {

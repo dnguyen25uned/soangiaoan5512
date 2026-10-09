@@ -220,3 +220,60 @@ textarea:focus { outline: 2px solid rgba(26, 86, 219, .25); border-color: var(--
 .lib-meta { margin-bottom: 8px; }
 .lib-actions { margin-bottom: 0; flex-wrap: wrap; }
 .lib-actions .btn { margin-bottom: 4px; }
+
+/* ---- Bước 4: thanh công thức toán học kiểu MathType ---- */
+.math-toolbar {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.math-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.math-group-label { font-size: 12.5px; font-weight: 700; color: var(--muted); flex: 0 0 auto; }
+.math-btns { display: flex; flex-wrap: wrap; gap: 4px; }
+.mbtn {
+  min-width: 34px;
+  padding: 5px 8px;
+  font-size: 15px;
+  line-height: 1.2;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+}
+.mbtn:hover { background: #eef4ff; border-color: var(--primary); }
+.mbtn:active { background: #dbe7ff; }
+.mbtn.struct { font-size: 14px; font-weight: 600; padding: 5px 10px; }
+.mbtn.struct sup, .mbtn.struct sub { font-size: 10px; }
+
+/* Cấu trúc công thức trong khung soạn thảo */
+.paper .mfrac {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 2px;
+  font-size: .92em;
+}
+.paper .mfrac .mnum { display: block; padding: 0 4px; border-bottom: 1.5px solid currentColor; }
+.paper .mfrac .mden { display: block; padding: 0 4px; }
+.paper .msqrt { display: inline-block; white-space: nowrap; margin: 0 1px; }
+.paper .msqrt .mrad { font-size: 1.05em; }
+.paper .msqrt .mbody { border-top: 1.5px solid currentColor; padding: 0 2px; }
+.paper .msqrt .mrootn { font-size: .7em; vertical-align: super; margin-right: 1px; }
+.paper .mabs .mabsb { padding: 0 1px; }
+/* Ô trống hiển thị khung chấm để người dùng bấm vào nhập liệu */
+.paper .mnum:empty::before, .paper .mden:empty::before,
+.paper .mbody:empty::before, .paper .mrootn:empty::before,
+.paper .mabsb:empty::before {
+  content: "□";
+  color: #9aa3b2;
+}
+.paper .mnum, .paper .mden, .paper .mbody,
+.paper .mrootn, .paper .mabsb { display: inline-block; min-width: 1.1em; }
+.paper .mfrac .mnum, .paper .mfrac .mden { display: block; }
