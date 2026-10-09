@@ -110,3 +110,6 @@ Ví dụ dùng key miễn phí Google AI Studio (Gemini):
   Công thức được giữ nguyên khi lưu vào thư viện, mở lại và xuất Word
   (số mũ/chỉ số dưới ra đúng định dạng Word; phân số ra dạng tử ⁄ mẫu;
   căn thức ra dạng √(…)).
+  Ký hiệu mũ gõ tay dạng x^2, (a+b)^(n+1), x^{2n}, 10^-2 được tự động chuẩn hoá
+  thành số mũ đúng định dạng: ngay khi AI soạn xong, khi bấm nút "^→x²" trên
+  thanh công thức, và khi lưu/xuất Word.

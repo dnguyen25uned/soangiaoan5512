@@ -580,6 +580,7 @@ function renderPlan(plan) {
     root.appendChild(h2);
     for (const b of sec.blocks || []) root.appendChild(renderBlock(b));
   }
+  normalizePreviewMath(); // AI hay viết x^2 -> chuẩn hoá thành số mũ đúng định dạng
   if (root.scrollIntoView) root.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -749,13 +750,74 @@ function initMathToolbar() {
   }
   bar.querySelectorAll('[data-struct]').forEach((b) => {
     b.addEventListener('mousedown', (e) => { e.preventDefault(); mathSaveSelection(); });
-    b.addEventListener('click', () => mathInsertStructure(b.getAttribute('data-struct')));
+    b.addEventListener('click', () => {
+      const kind = b.getAttribute('data-struct');
+      if (kind === 'normalize') { normalizePreviewMath(); return; }
+      mathInsertStructure(kind);
+    });
   });
   const root = $('preview');
   if (root) {
     root.addEventListener('keyup', mathSaveSelection);
     root.addEventListener('mouseup', mathSaveSelection);
   }
+}
+
+/* ---- Chuẩn hoá ký hiệu mũ dạng x^2, (a+b)^(n+1), x^{2n}, 10^-2
+   thành số mũ đúng định dạng (VD: 8x^2 -> 8x²) ---- */
+const CARET_RE = /\^(\{([^}]*)\}|\(([^)]*)\)|(-?[0-9A-Za-z]+))/g;
+const CARET_TEST = /\^(\{[^}]*\}|\([^)]*\)|-?[0-9A-Za-z]+)/;
+
+function caretInner(m) {
+  return m[2] !== undefined ? m[2] : (m[3] !== undefined ? m[3] : m[4]);
+}
+
+/** Chuẩn hoá ký hiệu ^ trong khung soạn thảo thành <sup>, chạy tại chỗ trên DOM. */
+function normalizePreviewMath() {
+  const root = $('preview');
+  if (!root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      let p = node.parentElement;
+      while (p && p !== root) {
+        if (p.tagName === 'SUP' || p.tagName === 'SUB' ||
+            (p.classList && (p.classList.contains('mfrac') || p.classList.contains('msqrt')))) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        p = p.parentElement;
+      }
+      return CARET_TEST.test(node.textContent) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    },
+  });
+  const targets = [];
+  while (walker.nextNode()) targets.push(walker.currentNode);
+  const re = new RegExp(CARET_RE.source, 'g');
+  for (const tn of targets) {
+    const t = tn.textContent;
+    const frag = document.createDocumentFragment();
+    let last = 0, m;
+    re.lastIndex = 0;
+    while ((m = re.exec(t))) {
+      const inner = caretInner(m);
+      if (m.index > last) frag.appendChild(document.createTextNode(t.slice(last, m.index)));
+      if (inner) {
+        const sup = document.createElement('sup');
+        sup.textContent = inner;
+        frag.appendChild(sup);
+      } else {
+        frag.appendChild(document.createTextNode(m[0]));
+      }
+      last = m.index + m[0].length;
+    }
+    if (last < t.length) frag.appendChild(document.createTextNode(t.slice(last)));
+    if (frag.childNodes.length) tn.replaceWith(frag);
+  }
+}
+
+/** Lấy plan từ nội dung đã sửa trong khung (đã chuẩn hoá ký hiệu ^). */
+function getEditedPlan() {
+  normalizePreviewMath();
+  return collectPlanFromPreview() || currentPlan;
 }
 
 /* ---- Đọc nội dung đã sửa trong khung soạn thảo thành plan JSON ----
@@ -930,7 +992,7 @@ async function downloadDocx(fetchOpts) {
 }
 
 async function saveLibrary() {
-  const plan = collectPlanFromPreview() || currentPlan;
+  const plan = getEditedPlan();
   if (!plan) { setLibraryStatus('Chưa có giáo án. Hãy soạn giáo án trước.'); return; }
   const btn = $('btn-save-library');
   btn.disabled = true;
@@ -962,7 +1024,7 @@ async function saveLibrary() {
 }
 
 async function exportDocx() {
-  const plan = collectPlanFromPreview() || currentPlan;
+  const plan = getEditedPlan();
   if (!plan) { setLibraryStatus('Chưa có giáo án. Hãy soạn giáo án trước.'); return; }
   const btn = $('btn-export-docx');
   btn.disabled = true;
