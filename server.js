@@ -204,8 +204,8 @@ function saveSettings(s) {
 app.get('/api/settings', (req, res) => {
   const s = loadSettings();
   res.json({
-    baseUrl: s.baseUrl || 'https://api.openai.com/v1',
-    model: s.model || 'gpt-4o-mini',
+    baseUrl: s.baseUrl || 'https://api.groq.com/openai/v1',
+    model: s.model || 'openai/gpt-oss-120b',
     hasKey: !!s.apiKey,
     keyTail: s.apiKey ? '…' + String(s.apiKey).slice(-4) : '',
   });

@@ -764,52 +764,103 @@ function initMathToolbar() {
 }
 
 /* ---- Chuẩn hoá ký hiệu mũ dạng x^2, (a+b)^(n+1), x^{2n}, 10^-2
-   thành số mũ đúng định dạng (VD: 8x^2 -> 8x²) ---- */
+   thành số mũ đúng định dạng (VD: 8x^2 -> 8x²),
+   và phân số viết dạng a/b (VD: 3/4, (x+1)/(x-1)) thành phân số
+   XẾP CHỒNG kiểu MathType (tử số trên, mẫu số dưới dấu gạch ngang).
+   Không chuyển: ngày tháng (12/05/2026), URL, chuỗi a/b/c. ---- */
 const CARET_RE = /\^(\{([^}]*)\}|\(([^)]*)\)|(-?[0-9A-Za-z]+))/g;
 const CARET_TEST = /\^(\{[^}]*\}|\([^)]*\)|-?[0-9A-Za-z]+)/;
+const FRAC_OP = '(?:\\([^()]*\\)|[A-Za-z0-9]+(?:[.,][A-Za-z0-9]+)*(?:\\^(?:\\{[^}]*\\}|\\([^)]*\\)|[A-Za-z0-9]+))?)';
+const FRAC_RE = new RegExp(`(?<!/\\d)(?<!/)(-?${FRAC_OP})\\s*/\\s*(${FRAC_OP})(?!\\s*/)(?!\\d)`, 'g');
+const FRAC_TEST = new RegExp(FRAC_RE.source);
 
 function caretInner(m) {
   return m[2] !== undefined ? m[2] : (m[3] !== undefined ? m[3] : m[4]);
 }
 
-/** Chuẩn hoá ký hiệu ^ trong khung soạn thảo thành <sup>, chạy tại chỗ trên DOM. */
+/** Tách "a/b" thành [{text} | {frac:{num,den}}]; dấu ⁄ cũ chuẩn hoá thành /. */
+function splitInlineText(t) {
+  const src = String(t == null ? '' : t).replace(/⁄/g, '/');
+  const re = new RegExp(FRAC_RE.source, 'g');
+  const out = [];
+  let last = 0, m;
+  while ((m = re.exec(src))) {
+    if (m.index > last) out.push({ text: src.slice(last, m.index) });
+    out.push({ frac: { num: m[1], den: m[2] } });
+    last = m.index + m[0].length;
+  }
+  if (last < src.length) out.push({ text: src.slice(last) });
+  return out.length ? out : [{ text: src }];
+}
+
+/** Chuyển ký hiệu ^ trong text thuần thành <sup>; trả về DocumentFragment. */
+function fragFromCaretText(t) {
+  const frag = document.createDocumentFragment();
+  const re = new RegExp(CARET_RE.source, 'g');
+  let last = 0, m;
+  re.lastIndex = 0;
+  while ((m = re.exec(t))) {
+    const inner = caretInner(m);
+    if (m.index > last) frag.appendChild(document.createTextNode(t.slice(last, m.index)));
+    if (inner) {
+      const sup = document.createElement('sup');
+      sup.textContent = inner;
+      frag.appendChild(sup);
+    } else {
+      frag.appendChild(document.createTextNode(m[0]));
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < t.length) frag.appendChild(document.createTextNode(t.slice(last)));
+  if (!frag.childNodes.length) frag.appendChild(document.createTextNode(t));
+  return frag;
+}
+
+/** Dựng span phân số xếp chồng (mfrac) từ 2 chuỗi tử/mẫu. */
+function fragFromFraction(numText, denText) {
+  const f = mathSpan('mfrac'), num = mathSpan('mnum'), den = mathSpan('mden');
+  num.appendChild(fragFromCaretText(numText));
+  den.appendChild(fragFromCaretText(denText));
+  f.appendChild(num);
+  f.appendChild(den);
+  return f;
+}
+
+/** Chuẩn hoá ký hiệu ^ và a/b trong khung soạn thảo; chạy tại chỗ trên DOM. */
 function normalizePreviewMath() {
   const root = $('preview');
   if (!root) return;
+  const targets = [];
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
-      let p = node.parentElement;
+      let p = node.parentElement, inFrac = false;
       while (p && p !== root) {
-        if (p.tagName === 'SUP' || p.tagName === 'SUB' ||
-            (p.classList && (p.classList.contains('mfrac') || p.classList.contains('msqrt')))) {
+        // Bỏ qua SUP/SUB đã định dạng; nhưng vẫn chuẩn hoá ^ bên trong
+        // phân số (mfrac) và căn thức (msqrt) để khung xem trước khớp file Word.
+        // Không tự tạo phân số lồng nhau: a/b bên trong mfrac giữ nguyên.
+        if (p.tagName === 'SUP' || p.tagName === 'SUB') {
           return NodeFilter.FILTER_REJECT;
         }
+        if (p.classList && p.classList.contains('mfrac')) inFrac = true;
         p = p.parentElement;
       }
-      return CARET_TEST.test(node.textContent) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      const t = node.textContent;
+      if (CARET_TEST.test(t) || (!inFrac && FRAC_TEST.test(t))) {
+        targets.push({ tn: node, inFrac });
+        return NodeFilter.FILTER_ACCEPT;
+      }
+      return NodeFilter.FILTER_SKIP;
     },
   });
-  const targets = [];
-  while (walker.nextNode()) targets.push(walker.currentNode);
-  const re = new RegExp(CARET_RE.source, 'g');
-  for (const tn of targets) {
+  while (walker.nextNode()) { /* targets được thu thập trong acceptNode */ }
+  for (const { tn, inFrac } of targets) {
     const t = tn.textContent;
     const frag = document.createDocumentFragment();
-    let last = 0, m;
-    re.lastIndex = 0;
-    while ((m = re.exec(t))) {
-      const inner = caretInner(m);
-      if (m.index > last) frag.appendChild(document.createTextNode(t.slice(last, m.index)));
-      if (inner) {
-        const sup = document.createElement('sup');
-        sup.textContent = inner;
-        frag.appendChild(sup);
-      } else {
-        frag.appendChild(document.createTextNode(m[0]));
-      }
-      last = m.index + m[0].length;
+    const pieces = inFrac ? [{ text: t }] : splitInlineText(t);
+    for (const pc of pieces) {
+      if (pc.frac) frag.appendChild(fragFromFraction(pc.frac.num, pc.frac.den));
+      else frag.appendChild(fragFromCaretText(pc.text));
     }
-    if (last < t.length) frag.appendChild(document.createTextNode(t.slice(last)));
     if (frag.childNodes.length) tn.replaceWith(frag);
   }
 }
