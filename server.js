@@ -192,7 +192,7 @@ function loadSettings() {
   try {
     return JSON.parse(fs.readFileSync(SETTINGS_PATH, 'utf8'));
   } catch {
-    return { baseUrl: 'https://api.groq.com/openai/v1', model: 'openai/gpt-oss-120b', apiKey: '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' };
+    return { baseUrl: 'https://api.groq.com/openai/v1', model: 'openai/gpt-oss-120b', apiKey: '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' };
   }
 }
 
