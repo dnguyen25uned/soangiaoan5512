@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://api.openai.com/v1",
-  "model": "gpt-4o-mini",
-  "apiKey": ""
+  "baseUrl": "https://api.groq.com/openai/v1",
+  "model": "openai/gpt-oss-120b",
+  "apiKey": "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"
 }
